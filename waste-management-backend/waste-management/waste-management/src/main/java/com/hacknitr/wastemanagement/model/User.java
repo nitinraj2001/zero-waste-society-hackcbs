@@ -32,10 +32,6 @@ public class User implements UserDetails {
 	
 	private String password;
 	
-	private String firstname;
-	
-	private String lastname;
-	
 	private String phonenumber;
 	
 	private boolean enabled=true;
@@ -78,21 +74,6 @@ public class User implements UserDetails {
 		this.password = password;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
 
 	public String getPhonenumber() {
 		return phonenumber;
@@ -131,14 +112,12 @@ public class User implements UserDetails {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String username, String email, String password, String firstname, String lastname, String phonenumber,
+	public User(String username, String email, String password, String phonenumber,
 			boolean enabled, String profile, Set<UserRole> userRole) {
 		super();
 		this.username = username;
 		this.email = email;
 		this.password = password;
-		this.firstname = firstname;
-		this.lastname = lastname;
 		this.phonenumber = phonenumber;
 		this.enabled = enabled;
 		this.profile = profile;
