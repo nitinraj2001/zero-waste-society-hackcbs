@@ -2,35 +2,35 @@
   <h2 align="center" style="color:red">Registration Form</h2>
   <section id="inner-wrapper" class="login">
     <article>
-      <form>
+      <form (ngSubmit)="registerUser()">
         <div class="form-group">
           <div class="input-group">
             
-            <input type="text" class="form-control" placeholder="Name">
+            <input type="text" class="form-control" placeholder="Name" name="username" [(ngModel)]="user.username">
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
            
-            <input type="email" class="form-control" placeholder="Email Address">
+            <input type="email" class="form-control" placeholder="Email Address" name="email" [(ngModel)]="user.email">
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
             
-            <input type="text" class="form-control" placeholder="Contact Number">
+            <input type="text" class="form-control" placeholder="Contact Number" name="phoneNumber" [(ngModel)]="user.phoneNumber">
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
            
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password">
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
            
-            <input type="password" class="form-control" placeholder="Confirm Password">
+            <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword">
           </div>
         </div>
           <button type="submit" class="btn btn-success btn-block">Submit</button>
