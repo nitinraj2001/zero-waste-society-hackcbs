@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import baseUrl from './helper';
 import { Subject } from 'rxjs';
 
@@ -10,14 +10,15 @@ import { Subject } from 'rxjs';
 export class LoginService {
 
   loginStatusSubject=new Subject<boolean>();
-
+   
   constructor(private http:HttpClient) { }
 
  generateJwtToken(user:any){
-   return this.http.post(`${baseUrl}/generateToken`,user);
+   return this.http.post(`${baseUrl}/generatetoken`,user);
  }
 
- getCurrentUser(){
+ getCurrentUser(username:any){
+
   return this.http.get(`${baseUrl}/current-user`);
 }
 

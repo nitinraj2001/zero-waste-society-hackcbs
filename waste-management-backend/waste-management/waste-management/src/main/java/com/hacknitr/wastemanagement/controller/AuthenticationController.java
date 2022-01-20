@@ -3,12 +3,12 @@ package com.hacknitr.wastemanagement.controller;
 import java.security.Principal;
 import java.util.Date;
 
+import com.hacknitr.wastemanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,11 +32,14 @@ public class AuthenticationController {
 	
 	@Autowired
 	private UserDetailsServiceImpl userDetailsServiceImpl;
+
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Autowired
 	private JwtUtils jwtUtil;
 	
-	@PostMapping("/generate-token")
+	@PostMapping("/generatetoken")
 	public ResponseEntity<?> generateToken(@RequestBody JwtRequest authrequest) throws Exception {
 		
 		System.out.println("AuthRequest data is: "+authrequest);
@@ -73,8 +76,15 @@ public class AuthenticationController {
 	}
 	
 	@GetMapping("/current-user")
-	public User getCurrentUser(Principal principal) {
-		return (User)this.userDetailsServiceImpl.loadUserByUsername(principal.getName());
+	public User getCurrentUser() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String currentUserName ="nitinraj123";
+		if (!(authentication instanceof AnonymousAuthenticationToken)) {
+			currentUserName = authentication.getName();
+			System.out.println("current user logged in is" + currentUserName);
+		}
+
+		return (User)this.userDetailsServiceImpl.loadUserByUsername(currentUserName);
 	}
 	
 	@GetMapping("/jwt-token-status/{token}")

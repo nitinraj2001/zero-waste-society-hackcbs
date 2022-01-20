@@ -11,7 +11,7 @@ import { RegisterService } from './../../service/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  user:any={"username":"","email":"","password":"","phoneNumber":""}
+  user:any={"username":"","email":"","password":"","phonenumber":""}
 
   confirmPassword:any;
 
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     if(this.user.username==null||this.user.username==''){
       this.snakeBar.open("username can't be empty");
     }
-    if(this.user.phoneNumber==null||this.user.phoneNumber==''){
+    if(this.user.phonenumber==null||this.user.phonenumber==''){
       this.snakeBar.open("phoneNumber can't be empty");
     }
     if(this.user.email==null||this.user.email==''){
@@ -37,7 +37,12 @@ export class RegisterComponent implements OnInit {
     }
 
       //console.log(this.User);
-      this.registerService.registerUser(this.user).subscribe((data)=>{console.log(data),Swal.fire("user is successfully registered"),this.router.navigate(['login']);},(error)=>this.snakeBar.open("something went wrong!! please try again...",'ok',{duration:30000}));
+      this.registerService.registerUser(this.user).subscribe((data)=>
+      {console.log(data),
+        Swal.fire("user is successfully registered"),
+        this.router.navigate(['login']);
+      },
+      (error)=>this.snakeBar.open("something went wrong!! please try again...",'ok',{duration:30000}));
       //window.location.href='/login';
       
 

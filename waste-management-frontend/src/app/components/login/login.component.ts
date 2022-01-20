@@ -15,15 +15,38 @@ export class LoginComponent implements OnInit {
   constructor(private snakeBar:MatSnackBar,private router:Router,private loginService:LoginService) { }
 
   ngOnInit(): void {
+    if(this.loginService.IsloggedIn()){
+      if(this.loginService.getUserAuthority()=='ADMIN'){
+      this.router.navigate(['admin']);
+      }
+      else if(this.loginService.getUserAuthority()=='USER'){
+       this.router.navigate(['user']);
+      }
+      else{
+        this.loginService.logout();
+      }
+    }
+
+  }
+
+  loginUser(){
+    if(this.user.username==null||this.user.username==''){
+      this.snakeBar.open("invalid username try again","ok");
+    }
+    if(this.user.password==null||this.user.password==''){
+      this.snakeBar.open("invalid password try again","ok");
+    }
+
+    this.generateToken();
   }
 
   generateToken(){
     this.loginService.generateJwtToken(this.user).subscribe(
       (data)=>{
-        //console.log(data),
+        console.log(data),
         //Swal.fire("user is successfully login"),
         this.loginService.loginUser(JSON.parse(JSON.stringify(data)).token),
-        this.loginService.getCurrentUser().subscribe(
+        this.loginService.getCurrentUser(this.user.username).subscribe(
           (data)=>{
             this.loginService.setUserDetails(data);
             //console.log("currently login user is "+JSON.stringify(data))

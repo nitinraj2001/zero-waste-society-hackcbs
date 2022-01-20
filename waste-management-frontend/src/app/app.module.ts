@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { UserdashboardComponent } from './user/userdashboard/userdashboard.component';
+import { AdmindashboardComponent } from './user/admindashboard/admindashboard.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     WelcomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserdashboardComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
