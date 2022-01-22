@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
 
   user:any={"username":"","password":""}
 
+  theuser:any;
+
   constructor(private snakeBar:MatSnackBar,private router:Router,private loginService:LoginService) { }
 
   ngOnInit(): void {
@@ -46,31 +48,32 @@ export class LoginComponent implements OnInit {
         console.log(data),
         //Swal.fire("user is successfully login"),
         this.loginService.loginUser(JSON.parse(JSON.stringify(data)).token),
-        this.loginService.getCurrentUser(this.user.username).subscribe(
-          (data)=>{
-            this.loginService.setUserDetails(data);
-            //console.log("currently login user is "+JSON.stringify(data))
-            if(this.loginService.getUserAuthority()=='ADMIN'){
-               //window.location.href='/admin';
-               this.router.navigate(['admin']);
-               this.loginService.loginStatusSubject.next(true);
-               this.snakeBar.open("admin is successfully logged in","ok");
-            }
-            else if(this.loginService.getUserAuthority()=='USER'){
-             //window.location.href='/user';
-             this.router.navigate(['user']);
-             this.loginService.loginStatusSubject.next(true);
-             this.snakeBar.open("user is successfully logged in","ok");
-            }
-            else{
-              this.loginService.logout();
-            }
-          },
-          (error)=>this.snakeBar.open("no user is currently logged in",'ok',{duration:3000})
-          )
-       },
-       (error)=>this.snakeBar.open("invalid details!! please try again with valid credentials",'ok',{duration:3000}
-       ));
+        this.theuser=JSON.parse(JSON.stringify(data)).user;
+        console.log(this.theuser);
+        this.loginService.setUserDetails(this.theuser);
+        if(this.theuser.authorities[0].authority=='USER'){
+          console.log(this.theuser.authorities[0].authority);
+          this.router.navigate(['user']);
+          this.loginService.loginStatusSubject.next(true);
+          this.snakeBar.open("user is successfully logged in","ok");
+        }
+        else if(this.theuser.authorities[0].authority=='ADMIN'){
+          this.router.navigate(['admin']);
+          this.loginService.loginStatusSubject.next(true);
+          this.snakeBar.open("admin is successfully logged in","ok");
+        }
+        else{
+          this.loginService.logout();
+          window.location.reload();
+        }
+      },
+      (error)=>{
+         this.snakeBar.open("Try with valid credentials","ok");
+      }
+
+    );
+        
+      
  }
 
   

@@ -4,10 +4,16 @@
 </a>
  <span><button mat-raised-button color="primary" routerLink="/home" style="margin-left: 5%;"> My Swachta App</button></span>
  <span class="example-spacer"></span>
- <a routerLink="/register" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" style="margin-right: 4%;">
+ <a routerLink="/register" *ngIf="!token" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" style="margin-right: 4%;">
    Register
  </a>
- <a routerLink="/login" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" style="margin-right:2%;">
+ <a routerLink="/login" *ngIf="!token" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" style="margin-right:2%;">
   Login
 </a>
+<a routerLink="/login" *ngIf="token" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" style="margin-right:13%;">
+ <h2><i style="color:yellow">welcome {{username}}</i></h2>
+</a>
+
+
+
 </mat-toolbar>

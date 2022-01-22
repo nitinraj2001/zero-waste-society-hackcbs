@@ -4,11 +4,13 @@ import java.security.Principal;
 import java.util.Date;
 
 import com.hacknitr.wastemanagement.repository.UserRepository;
+import com.hacknitr.wastemanagement.response.LoginResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,8 +60,13 @@ public class AuthenticationController {
 		}
 		
 		String token=jwtUtil.generateToken(authrequest.getUsername());
+
+		LoginResponse loginResponse=new LoginResponse();
+		loginResponse.setToken(token);
+		User user=(User)this.userDetailsServiceImpl.loadUserByUsername(authrequest.getUsername());
+		loginResponse.setUser(user);
 		
-		return ResponseEntity.ok(new JwtResponse(token));
+		return ResponseEntity.ok(loginResponse);
 		
 	}
 	
@@ -76,15 +83,11 @@ public class AuthenticationController {
 	}
 	
 	@GetMapping("/current-user")
-	public User getCurrentUser() {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		String currentUserName ="nitinraj123";
-		if (!(authentication instanceof AnonymousAuthenticationToken)) {
-			currentUserName = authentication.getName();
-			System.out.println("current user logged in is" + currentUserName);
-		}
-
-		return (User)this.userDetailsServiceImpl.loadUserByUsername(currentUserName);
+	public User getCurrentUser(Principal principal) {
+		String username;
+		username=SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
+		System.out.println("Authentication Controller request for current user "+username);
+		return (User)this.userDetailsServiceImpl.loadUserByUsername(username);
 	}
 	
 	@GetMapping("/jwt-token-status/{token}")

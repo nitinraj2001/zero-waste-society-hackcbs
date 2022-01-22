@@ -9,7 +9,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
-import { WelcomeComponent } from './page/user/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { UserdashboardComponent } from './user/userdashboard/userdashboard.component';
 import { AdmindashboardComponent } from './user/admindashboard/admindashboard.component';
+import {MatCardModule} from '@angular/material/card';
+import { WelcomePageComponent } from './common/welcome-page/welcome-page.component';
 
 
 @NgModule({
@@ -26,11 +27,11 @@ import { AdmindashboardComponent } from './user/admindashboard/admindashboard.co
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    WelcomeComponent,
     LoginComponent,
     RegisterComponent,
     UserdashboardComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,10 @@ import { AdmindashboardComponent } from './user/admindashboard/admindashboard.co
     FormsModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatButtonModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
