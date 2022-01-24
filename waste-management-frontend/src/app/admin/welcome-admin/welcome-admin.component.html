@@ -1,0 +1,24 @@
+<h4 style="margin-top: 5%; margin-left:5%; color:red">List of Users In My Swachhta App</h4>
+<div class="container">  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="text-align: left;">username</th>
+            <th style="text-align: left;">email</th>
+            <th style="text-align: left;">phone number</th>
+            <th style="text-align: left;">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phonenumber}}</td>
+            <td><button mat-raised-button color="accent">view</button>&nbsp;<button mat-raised-button color="warn" (click)="deleteUser(user.userId)">delete</button> </td>
+          </tr>
+          
+        </tbody>
+      </table> 
+    
+</div>
+  

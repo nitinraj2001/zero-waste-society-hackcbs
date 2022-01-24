@@ -19,6 +19,7 @@ import { UserdashboardComponent } from './user/userdashboard/userdashboard.compo
 import { AdmindashboardComponent } from './user/admindashboard/admindashboard.component';
 import {MatCardModule} from '@angular/material/card';
 import { WelcomePageComponent } from './common/welcome-page/welcome-page.component';
+import { WelcomeAdminComponent } from './admin/welcome-admin/welcome-admin.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { WelcomePageComponent } from './common/welcome-page/welcome-page.compone
     RegisterComponent,
     UserdashboardComponent,
     AdmindashboardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    WelcomeAdminComponent
   ],
   imports: [
     BrowserModule,

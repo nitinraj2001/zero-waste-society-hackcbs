@@ -1,9 +1,12 @@
 package com.hacknitr.wastemanagement.controller;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +25,7 @@ import com.hacknitr.wastemanagement.sevice.UserService;
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/user")
 public class UserController {
 	
@@ -60,9 +64,15 @@ public class UserController {
 	}
 	
 	@DeleteMapping("/{userId}")
-	public String deleteUser(@PathVariable("userId")Long userId) {
+	public ResponseEntity deleteUser(@PathVariable("userId")Long userId) {
 		this.userService.deleteUser(userId);
-		return "user with userid "+userId+" is deleted successfully";
+		return ResponseEntity.ok("user with userid "+userId+" is deleted successfully");
+	}
+
+	@GetMapping("/")
+	public List<User> getAllUsers(){
+
+		return this.userService.findAllUsers();
 	}
 
 }

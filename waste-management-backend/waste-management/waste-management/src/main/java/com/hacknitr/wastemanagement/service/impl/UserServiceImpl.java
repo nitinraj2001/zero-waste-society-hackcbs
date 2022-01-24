@@ -1,5 +1,6 @@
 package com.hacknitr.wastemanagement.service.impl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +50,11 @@ public class UserServiceImpl implements UserService {
 		
 		 this.userRepository.deleteById(id);
 	}
-	
 
-	
+	@Override
+	public List<User> findAllUsers() {
+		return this.userRepository.findAll();
+	}
+
 
 }

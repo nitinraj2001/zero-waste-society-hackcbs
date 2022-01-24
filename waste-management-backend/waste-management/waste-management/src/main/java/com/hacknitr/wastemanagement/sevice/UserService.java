@@ -1,5 +1,6 @@
 package com.hacknitr.wastemanagement.sevice;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -17,4 +18,6 @@ public interface UserService {
 	public User findUser(String username);
 	
 	public void deleteUser(Long id);
+
+    List<User> findAllUsers();
 }
