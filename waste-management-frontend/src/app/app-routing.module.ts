@@ -9,6 +9,7 @@ import { WelcomePageComponent } from './common/welcome-page/welcome-page.compone
 import { WelcomeAdminComponent } from './admin/welcome-admin/welcome-admin.component';
 import {UserGuard} from './auth/user.guard';
 import {AdminGuard} from './auth/admin.guard';
+import { CategoryComponent } from './admin/category/category.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path:'',component:WelcomePageComponent}
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
-    {path:'',component:WelcomeAdminComponent}
+    {path:'',component:WelcomeAdminComponent},
+    {path:'add-category',component:CategoryComponent}
   ]}
 ];
 

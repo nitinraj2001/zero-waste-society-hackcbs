@@ -20,6 +20,7 @@ import { AdmindashboardComponent } from './user/admindashboard/admindashboard.co
 import {MatCardModule} from '@angular/material/card';
 import { WelcomePageComponent } from './common/welcome-page/welcome-page.component';
 import { WelcomeAdminComponent } from './admin/welcome-admin/welcome-admin.component';
+import { CategoryComponent } from './admin/category/category.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { WelcomeAdminComponent } from './admin/welcome-admin/welcome-admin.compo
     UserdashboardComponent,
     AdmindashboardComponent,
     WelcomePageComponent,
-    WelcomeAdminComponent
+    WelcomeAdminComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
