@@ -17,7 +17,7 @@
             <td>{{user.username}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phonenumber}}</td>
-            <td><button mat-raised-button color="accent">view</button>&nbsp;<button mat-raised-button color="warn" (click)="deleteUser(user.userId)">delete</button> </td>
+            <td><button mat-raised-button (click)="findUser(user.userId)" color="accent">view</button>&nbsp;<button mat-raised-button color="warn" (click)="deleteUser(user.userId)">delete</button> </td>
           </tr>
           
         </tbody>

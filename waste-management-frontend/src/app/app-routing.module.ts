@@ -10,6 +10,7 @@ import { WelcomeAdminComponent } from './admin/welcome-admin/welcome-admin.compo
 import {UserGuard} from './auth/user.guard';
 import {AdminGuard} from './auth/admin.guard';
 import { CategoryComponent } from './admin/category/category.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 
 
@@ -18,11 +19,13 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'user',component:UserdashboardComponent, canActivate:[UserGuard],children:[
-    {path:'',component:WelcomePageComponent}
+    {path:'',component:WelcomePageComponent},
+
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
     {path:'',component:WelcomeAdminComponent},
-    {path:'add-category',component:CategoryComponent}
+    {path:'add-category',component:CategoryComponent},
+    {path:'view-user-profile/:id',component:UserProfileComponent}
   ]}
 ];
 
