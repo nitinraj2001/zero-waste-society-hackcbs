@@ -20,4 +20,6 @@ public interface UserService {
 	public void deleteUser(Long id);
 
     List<User> findAllUsers();
+
+	public User fetchUser(Long id);
 }

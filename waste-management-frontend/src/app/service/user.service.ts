@@ -15,4 +15,8 @@ export class UserService {
   getAllUsers(){
     return this.http.get(`${baseUrl}/user/`);
   }
+
+  getUser(id){
+    return this.http.get(`${baseUrl}/user/${id}`);
+  }
 }

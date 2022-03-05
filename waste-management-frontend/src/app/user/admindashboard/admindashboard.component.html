@@ -2,74 +2,33 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-               <mat-card style="margin-top: 8%;"><h2>Waste Category</h2>
-                
-            </mat-card>
+              <div class="position-sticky" style="margin-top:15%">
+                <div class="list-group list-group-flush mx-3 mt-4" >
+                  <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Admin Dashboard</span>
+                  </a>
+                  <a routerLink="/admin/add-category" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-lock fa-fw me-3"></i><span>Add waste Category</span>
+                  </a>
+                  <a routerLink="/admin/" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-chart-line fa-fw me-3"></i><span>View Users</span>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>View Waste Categories</span>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>Logout</span>
+                  </a>
+                  
+                </div>
+              </div>
+          
+            <!-- Sidebar -->
+          
             </div>
             <div class="col-md-9">
                 <mat-card style="margin-top:2%"><h2 style="color:green"><i>Welcome {{username}} To My Swachta App </i><button style="margin-left:20%" mat-raised-button color="primary" (click)="logout()"><h3>Logout</h3></button></h2></mat-card>
-                <!--dummy data to add operations of admin-->
-                <div class="container text-center my-3">
-                    <div class="row mx-auto my-auto">
-                        <div id="myCarousel" class="carousel slide w-100" data-ride="carousel" style="background-color: darkkhaki;">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item py-5 active">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="card">
-                                              <div class="card-body" style="background-color: palevioletred;">
-                                                <h4 class="card-title">Add Category</h4>
-                                                <p class="card-text">add waste Category</p>
-                                                <a routerLink="/admin/add-category" mat-raised-button color="warn">Add Category</a>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="card">
-                                              <div class="card-body" style="background-color: palevioletred;">
-                                                <h4 class="card-title">View Disposal</h4>
-                                                <p class="card-text">view waste disposal</p>
-                                                <button href="#" mat-raised-button color="warn">View Disposal</button>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="card">
-                                              <div class="card-body" style="background-color: palevioletred;">
-                                                <h4 class="card-title">View Wastes</h4>
-                                                <p class="card-text">view wastes</p>
-                                                <button href="#" mat-raised-button color="warn">view waste</button>
-                                              </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <div class="card">
-                                              <div class="card-body" style="background-color: palevioletred;">
-                                                <h4 class="card-title">View Report</h4>
-                                                <p class="card-text">view all Reports</p>
-                                                <button href="#" mat-raised-button color="warn">View Reports</button>
-                                              </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  </div>
-                              </div>
-                            
-                    <div class="row">
-                        <div class="col-12">
-                            <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="fa fa-chevron-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
-                                <span class="fa fa-chevron-right" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                
+               
                 <router-outlet></router-outlet>
             </div> 
         </div>

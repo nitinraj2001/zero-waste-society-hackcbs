@@ -40,7 +40,7 @@ export class WelcomeAdminComponent implements OnInit {
 
   findUser(id){
     console.log("user with id"+id+" is to be searched");
-    this.router.navigate[`/admin/view-user-profile/${id}`];
+    this.router.navigate([`/admin/view-user-profile/${id}`]);
   }
 
 

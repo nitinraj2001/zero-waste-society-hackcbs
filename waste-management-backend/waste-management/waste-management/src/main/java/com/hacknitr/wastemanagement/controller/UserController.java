@@ -57,17 +57,24 @@ public class UserController {
 		return this.userService.createUser(theuser, userroles);
 		
 	}
-	
+	/*
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
 		return this.userService.findUser(username);
 	}
+	 */
 	
 	@DeleteMapping("/{userId}")
 	public ResponseEntity deleteUser(@PathVariable("userId")Long userId) {
 		this.userService.deleteUser(userId);
 		return ResponseEntity.ok("user with userid "+userId+" is deleted successfully");
 	}
+
+	@GetMapping("/{userId}")
+	public ResponseEntity fetchUser(@PathVariable("userId")Long userId){
+		return ResponseEntity.ok(this.userService.fetchUser(userId));
+	}
+
 
 	@GetMapping("/")
 	public List<User> getAllUsers(){

@@ -51,7 +51,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     HttpClientModule,
     MatSnackBarModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

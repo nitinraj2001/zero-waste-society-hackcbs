@@ -56,5 +56,10 @@ public class UserServiceImpl implements UserService {
 		return this.userRepository.findAll();
 	}
 
+	@Override
+	public User fetchUser(Long id) {
+		return this.userRepository.findById(id).get();
+	}
+
 
 }
