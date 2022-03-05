@@ -22,6 +22,8 @@ import { WelcomePageComponent } from './common/welcome-page/welcome-page.compone
 import { WelcomeAdminComponent } from './admin/welcome-admin/welcome-admin.component';
 import { CategoryComponent } from './admin/category/category.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { ViewCategoriesComponent } from './common/view-categories/view-categories.component';
+import { UpdateCategoryComponent } from './admin/update-category/update-category.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
     WelcomePageComponent,
     WelcomeAdminComponent,
     CategoryComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ViewCategoriesComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

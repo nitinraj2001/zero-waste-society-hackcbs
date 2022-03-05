@@ -11,6 +11,8 @@ import {UserGuard} from './auth/user.guard';
 import {AdminGuard} from './auth/admin.guard';
 import { CategoryComponent } from './admin/category/category.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { ViewCategoriesComponent } from './common/view-categories/view-categories.component';
+import { UpdateCategoryComponent } from './admin/update-category/update-category.component';
 
 
 
@@ -24,7 +26,9 @@ const routes: Routes = [
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
     {path:'',component:WelcomeAdminComponent},
+    {path:'view-categories',component:ViewCategoriesComponent},
     {path:'add-category',component:CategoryComponent},
+    {path:'update-category/:id',component:UpdateCategoryComponent},
     {path:'view-user-profile/:id',component:UserProfileComponent}
   ]}
 ];

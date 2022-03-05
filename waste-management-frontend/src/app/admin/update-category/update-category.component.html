@@ -7,7 +7,7 @@
 <div class="col-md-6 bg-white p-5">
 <h3 class="pb-3">Add Waste Category</h3>
 <div class="form-style">
-<form (ngSubmit)="registerCategory()">
+<form (ngSubmit)="updateWasteCategory()">
   <div class="form-group pb-3">    
     <input type="text" placeholder="enter category name" class="form-control" id="categoryName" aria-describedby="emailHelp" name="categoryName" [(ngModel)]="category.categoryName">   
   </div>
@@ -32,3 +32,4 @@
 </div>
 </div>
 </div>
+

@@ -15,6 +15,7 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/category")
 public class CategoryController {
 

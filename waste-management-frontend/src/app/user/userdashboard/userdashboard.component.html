@@ -2,7 +2,32 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-               <mat-card style="margin-top: 8%;"><h2>Waste Category</h2></mat-card>
+               <mat-card style="margin-top: 8%;">
+                <div class="position-sticky" style="margin-top:-5%">
+                    <div class="list-group list-group-flush mx-3 mt-4" >
+                      <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>User Dashboard</span>
+                      </a>
+                      <a routerLink="/admin/add-category" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-lock fa-fw me-3"></i><span>Add waste Category</span>
+                      </a>
+                      <a routerLink="/admin/" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>View Users</span>
+                      </a>
+                      <a routerLink="/admin/view-categories" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-pie fa-fw me-3"></i><span>View Waste Categories</span>
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-pie fa-fw me-3"></i><span>Logout</span>
+                      </a>
+                      
+                    </div>
+                  </div>
+              
+                <!-- Sidebar -->
+              
+    
+               </mat-card>
             </div>
             <div class="col-md-9">
                 <mat-card style="margin-top:2%"><h2 style="color:green"><i>Welcome {{username}} To My Swachta App </i><button style="margin-left:20%" mat-raised-button color="primary" (click)="logout()"><h3>Logout</h3></button></h2></mat-card>
@@ -10,6 +35,9 @@
             </div> 
         </div>
     </div>
+</div>
+<div style="margin-left:75%">
+    <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/abad935e-90bf-42d2-b914-16032140f90c"></iframe>
 </div>
 
 
