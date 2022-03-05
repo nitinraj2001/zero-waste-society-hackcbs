@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
+  category:any={"categoryName":"","description":"",}
+  picByte: any;
+  categoryId:any;
+
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+  onFileChanged(event) {
+    this.picByte = event.target.files[0]
   }
 
 }

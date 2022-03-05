@@ -38,7 +38,7 @@ public class CategoryController {
     }
 
     //update category successfully
-    @PostMapping(value="/",headers = "content-type=multipart/*")
+    @PutMapping(value="/",headers = "content-type=multipart/*")
     public ResponseEntity<?> updateCategory(@RequestParam("categoryImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description) throws IOException {
 
         Category wasteCategory= new Category();
