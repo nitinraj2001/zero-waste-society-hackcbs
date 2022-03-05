@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -12,14 +12,23 @@ export class UpdateCategoryComponent implements OnInit {
   category:any={"id":"","categoryName":"","description":"",}
   picByte: any;
   categoryId:any;
+  base64Data: any;
 
-  constructor(private categoryService:CategoryService,private route:Router) { }
+  retrievedImage: string;
+
+  constructor(private categoryService:CategoryService,private route:Router,private router:ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+    this.categoryId=+this.router.snapshot.params['id'];
+    this.categoryService.getCategory(this.categoryId).subscribe((data)=>{
+      this.category=data;
+      this.base64Data=this.category.picByte;
+        this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        this.category.picByte=this.retrievedImage;
+    })
   }
   onFileChanged(event) {
-    this.picByte = event.target.files[0]
+    this.picByte = event.target.files[0];
   }
 
   updateWasteCategory(){

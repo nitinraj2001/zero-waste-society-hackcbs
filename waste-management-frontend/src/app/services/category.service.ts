@@ -24,4 +24,8 @@ export class CategoryService {
   updateCategory(category){
     return this.http.put(`${baseUrl}/category/`,category);
   }
+
+  getCategory(id){
+    return this.http.get(`${baseUrl}/category/${id}`);
+  }
 }

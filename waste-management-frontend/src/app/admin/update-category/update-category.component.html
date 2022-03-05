@@ -15,7 +15,7 @@
     <input type="text" placeholder="enter category description" class="form-control" id="categoryDescription" name="description" [(ngModel)]="category.description">
   </div>
   <div class="form-outline mb-4">
-    <input type="file" (change)="onFileChanged($event)">
+    <input type="file" (change)="onFileChanged($event)" name="picByte" [(ngModel)]="category.picByte">
     <label style="margin-top:5%; color:red" class="form-label" for="form3Example8"><i><b>Upload Image Of Category</b></i></label>
   </div>
   
