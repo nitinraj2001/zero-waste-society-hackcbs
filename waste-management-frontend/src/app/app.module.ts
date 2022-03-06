@@ -24,6 +24,7 @@ import { CategoryComponent } from './admin/category/category.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { ViewCategoriesComponent } from './common/view-categories/view-categories.component';
 import { UpdateCategoryComponent } from './admin/update-category/update-category.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -50,6 +51,10 @@ import { UpdateCategoryComponent } from './admin/update-category/update-category
     MatIconModule,
     MatButtonModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDKrOj0daB7G8s-tFqykodZ-zCt17O3590',
+      libraries: ['places']
+    }),
     MatSnackBarModule,
     BrowserAnimationsModule,
     HttpClientModule,

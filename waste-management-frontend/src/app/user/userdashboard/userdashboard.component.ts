@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { MapsAPILoader } from '@agm/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
@@ -16,7 +17,8 @@ export class UserdashboardComponent implements OnInit {
   jwtTokenStatus: any;
   mySub: Subscription;
 
-  constructor(private loginService:LoginService,private route:Router,private snakeBar:MatSnackBar) { }
+  constructor(private loginService:LoginService,private route:Router,private snakeBar:MatSnackBar,private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone) { }
 
   ngOnInit(): void {
      this.user=JSON.parse(localStorage.getItem("user"));
@@ -24,16 +26,7 @@ export class UserdashboardComponent implements OnInit {
      this.mySub = interval(1000*60*10).subscribe((func => {
       this.checkJwtTokenStatus();
       //ai chat bot integration
-      (function(d,m){
-         var kommunicateSettings={"appId":"zerowasteSociety-yu9c","popupWidget":true,"automaticChatOpenOnNavigation":true};
-         var s=document.createElement("script");s.type="text/javascript";s.async=true;
-         s.src="https://widget.kommunicate.io/v2/kommunicate.app";
-         var h=document.getElementsByTagName("head")[0];
-         h.appendChild(s);
-         (window as any).kommunicate=m;
-         m._globals=kommunicateSettings;
-      })
-      (document,(window as any).kommunicate||{});
+      
     }))
   console.log("chatbot is not coming");
   }

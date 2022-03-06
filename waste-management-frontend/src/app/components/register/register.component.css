@@ -70,3 +70,13 @@ color:#5cb85c;
       border-right-style: none;
       border-right-width: medium;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:blueviolet;
+  color: white;
+  text-align: center;
+}
