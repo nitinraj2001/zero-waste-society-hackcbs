@@ -13,6 +13,7 @@ import { CategoryComponent } from './admin/category/category.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { ViewCategoriesComponent } from './common/view-categories/view-categories.component';
 import { UpdateCategoryComponent } from './admin/update-category/update-category.component';
+import { AddWasteComponent } from './user/add-waste/add-waste.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'user',component:UserdashboardComponent, canActivate:[UserGuard],children:[
     {path:'',component:WelcomePageComponent},
+    {path:'waste',component:AddWasteComponent}
 
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[

@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    box-sizing:border-box;
+}
+
+form{
+    margin-top:10px;
+    text-align:center;
+}
+input{
+    display:block;
+    width:350px;
+    height:40px;
+    margin:20px;
+    border:none;
+    outline: none;
+    font-size:18px;
+    border-bottom:1px solid black;
+    background: transparent;
+    color:black;
+}
+button{
+    width:350px;
+    height:40px;
+    font-size:20px;
+    margin:20px;
+    background-color: black;
+    border:none;
+    color:white;
+
+}
+form h1{
+    margin-bottom: 30px;
+    color:black;
+}
+::placeholder{
+    color:grey;
+
+}

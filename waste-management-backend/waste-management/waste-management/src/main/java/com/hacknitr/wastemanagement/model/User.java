@@ -37,7 +37,17 @@ public class User implements UserDetails {
 	private boolean enabled=true;
 	
 	private String profile;
-	
+
+	private String societyName;
+
+	public String getSocietyName() {
+		return societyName;
+	}
+
+	public void setSocietyName(String societyName) {
+		this.societyName = societyName;
+	}
+
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER,mappedBy="user")
 	@JsonIgnore
 	private Set<UserRole> userRole=new HashSet<>();
@@ -112,15 +122,14 @@ public class User implements UserDetails {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String username, String email, String password, String phonenumber,
-			boolean enabled, String profile, Set<UserRole> userRole) {
-		super();
+	public User(String username, String email, String password, String phonenumber, boolean enabled, String profile, String societyName, Set<UserRole> userRole) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.phonenumber = phonenumber;
 		this.enabled = enabled;
 		this.profile = profile;
+		this.societyName = societyName;
 		this.userRole = userRole;
 	}
 

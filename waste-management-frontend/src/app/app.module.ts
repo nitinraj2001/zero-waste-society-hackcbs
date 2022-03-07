@@ -25,6 +25,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { ViewCategoriesComponent } from './common/view-categories/view-categories.component';
 import { UpdateCategoryComponent } from './admin/update-category/update-category.component';
 import { AgmCoreModule } from '@agm/core';
+import { AddWasteComponent } from './user/add-waste/add-waste.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AgmCoreModule } from '@agm/core';
     CategoryComponent,
     UserProfileComponent,
     ViewCategoriesComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    AddWasteComponent
   ],
   imports: [
     BrowserModule,
