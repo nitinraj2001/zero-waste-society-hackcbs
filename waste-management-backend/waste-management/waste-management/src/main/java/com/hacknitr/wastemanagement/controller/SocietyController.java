@@ -1,7 +1,9 @@
 package com.hacknitr.wastemanagement.controller;
 
 import com.hacknitr.wastemanagement.model.Category;
+import com.hacknitr.wastemanagement.model.Society;
 import com.hacknitr.wastemanagement.sevice.CategoryService;
+import com.hacknitr.wastemanagement.sevice.SocietyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,69 +17,51 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/category")
-public class CategoryController {
+@RequestMapping("/society")
+public class SocietyController {
 
     @Autowired
-    private CategoryService categoryService;
+    private SocietyService societyService;
 
     @PostMapping(value="/",headers = "content-type=multipart/*")
-    public ResponseEntity<?> registerCategory(@RequestParam("categoryImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description) throws IOException {
+    public ResponseEntity<?> registerSociety(@RequestParam("societyImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("email") String email,@RequestParam("address") String address) throws IOException {
 
-        Category wasteCategory= new Category();
-        wasteCategory.setCategoryName(name);
-        wasteCategory.setDescription(description);
+        Society society= new Society();
+        society.setName(name);
+        society.setEmail(email);
+        society.setAddress(address);
         try {
-            wasteCategory.setPicByte(compressBytes(file.getBytes()));
+            society.setPicByte(compressBytes(file.getBytes()));
         }catch(Exception e) {
             e.printStackTrace();
 
         }
-        this.categoryService.createCategory(wasteCategory);
-        return ResponseEntity.ok("category is added succesfully");
+        this.societyService.createSociety(society);
+        return ResponseEntity.ok("society is added succesfully");
     }
 
-    //update category successfully
-    @PutMapping(value="/",headers = "content-type=multipart/*")
-    public ResponseEntity<?> updateCategory(@RequestParam("categoryImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description) throws IOException {
-
-        Category wasteCategory= new Category();
-        wasteCategory.setCategoryName(name);
-        wasteCategory.setDescription(description);
-        try {
-            wasteCategory.setPicByte(compressBytes(file.getBytes()));
-        }catch(Exception e) {
-            e.printStackTrace();
-
+    @GetMapping("/getAllSociety")
+    public ResponseEntity<?> getAllSocietyDetails(){
+        List<Society> allSocieties=this.societyService.allSocieties();
+        for(Society society:allSocieties) {
+            society.setPicByte(decompressBytes(society.getPicByte()));
         }
-        this.categoryService.updateCategory(wasteCategory);
-        return ResponseEntity.ok("category is updated succesfully");
-    }
-
-
-    @GetMapping("/getAllWasteCategory")
-    public ResponseEntity<?> getAllCategoryDetails(){
-        List<Category> allCategory=this.categoryService.allCategories();
-        for(Category category:allCategory) {
-            category.setPicByte(decompressBytes(category.getPicByte()));
-        }
-        return ResponseEntity.ok(allCategory);
+        return ResponseEntity.ok(allSocieties);
     }
 
     //delete any category
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteCategory(@PathVariable Long id){
-        this.categoryService.deleteCategory(id);
-        return ResponseEntity.ok("category deleted successfully");
+    public ResponseEntity deleteSociety(@PathVariable Long id){
+        this.societyService.deleteSociety(id);
+        return ResponseEntity.ok("society deleted successfully");
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Category> getCategory(@PathVariable Long id){
-        Category category=this.categoryService.viewCategory(id);
-        System.out.println(category);
-        category.setPicByte(decompressBytes(category.getPicByte()));
-        return ResponseEntity.ok(category);
+    public ResponseEntity<Society> getSociety(@PathVariable Long id){
+        Society society=this.societyService.viewSociety(id);
+        System.out.println(society);
+        society.setPicByte(decompressBytes(society.getPicByte()));
+        return ResponseEntity.ok(society);
     }
 
     // compress the image bytes before storing it in the database
@@ -117,4 +101,3 @@ public class CategoryController {
     }
 
 }
-
