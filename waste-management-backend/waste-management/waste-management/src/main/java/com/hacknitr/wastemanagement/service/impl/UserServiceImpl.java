@@ -3,13 +3,13 @@ package com.hacknitr.wastemanagement.service.impl;
 import java.util.List;
 import java.util.Set;
 
+import com.hacknitr.wastemanagement.repository.RoleRepository;
+import com.hacknitr.wastemanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hacknitr.wastemanagement.model.User;
 import com.hacknitr.wastemanagement.model.UserRole;
-import com.hacknitr.wastemanagement.repository.RoleRepository;
-import com.hacknitr.wastemanagement.repository.UserRepository;
 import com.hacknitr.wastemanagement.sevice.UserService;
 
 @Service

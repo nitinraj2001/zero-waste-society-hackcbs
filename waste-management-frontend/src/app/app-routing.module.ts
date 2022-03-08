@@ -14,6 +14,8 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { ViewCategoriesComponent } from './common/view-categories/view-categories.component';
 import { UpdateCategoryComponent } from './admin/update-category/update-category.component';
 import { AddWasteComponent } from './user/add-waste/add-waste.component';
+import { NgoRegistrationComponent } from './admin/ngo-registration/ngo-registration.component';
+import { RegisterSocietyComponent } from './admin/register-society/register-society.component';
 
 
 
@@ -31,7 +33,9 @@ const routes: Routes = [
     {path:'view-categories',component:ViewCategoriesComponent},
     {path:'add-category',component:CategoryComponent},
     {path:'update-category/:id',component:UpdateCategoryComponent},
-    {path:'view-user-profile/:id',component:UserProfileComponent}
+    {path:'view-user-profile/:id',component:UserProfileComponent},
+    {path:'register-ngo',component:NgoRegistrationComponent},
+    {path:'society',component:RegisterSocietyComponent}
   ]}
 ];
 

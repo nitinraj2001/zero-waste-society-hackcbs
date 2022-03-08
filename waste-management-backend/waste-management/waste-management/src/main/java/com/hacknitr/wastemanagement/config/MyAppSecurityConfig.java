@@ -1,5 +1,6 @@
 package com.hacknitr.wastemanagement.config;
 
+import com.hacknitr.wastemanagement.service.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +15,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import com.hacknitr.wastemanagement.service.impl.UserDetailsServiceImpl;
 
 
 @Configuration

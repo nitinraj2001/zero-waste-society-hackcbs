@@ -1,14 +1,13 @@
 package com.hacknitr.wastemanagement.service.impl;
+import com.hacknitr.wastemanagement.exception.UserNotFoundException;
+import com.hacknitr.wastemanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.hacknitr.wastemanagement.exception.UserNotFoundException;
 import com.hacknitr.wastemanagement.model.User;
-import com.hacknitr.wastemanagement.repository.UserRepository;
-
 
 
 @Service

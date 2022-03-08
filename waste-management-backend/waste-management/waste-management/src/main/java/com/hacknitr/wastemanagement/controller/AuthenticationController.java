@@ -3,14 +3,12 @@ package com.hacknitr.wastemanagement.controller;
 import java.security.Principal;
 import java.util.Date;
 
-import com.hacknitr.wastemanagement.repository.UserRepository;
 import com.hacknitr.wastemanagement.response.LoginResponse;
+import com.hacknitr.wastemanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hacknitr.wastemanagement.model.JwtRequest;
-import com.hacknitr.wastemanagement.model.JwtResponse;
 import com.hacknitr.wastemanagement.model.User;
 import com.hacknitr.wastemanagement.service.impl.UserDetailsServiceImpl;
 import com.hacknitr.wastemanagement.util.JwtUtils;
