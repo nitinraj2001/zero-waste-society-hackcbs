@@ -1,5 +1,7 @@
 package com.hacknitr.wastemanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -23,6 +25,7 @@ public class WasteMaterial {
 
     @OneToOne
     @JoinColumn(name="category_id", nullable=false)
+    @JsonIgnore
     private Category category;
 
     public Long getId() {

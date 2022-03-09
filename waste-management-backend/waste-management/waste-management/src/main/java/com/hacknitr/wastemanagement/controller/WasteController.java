@@ -2,6 +2,7 @@ package com.hacknitr.wastemanagement.controller;
 
 import com.hacknitr.wastemanagement.model.Category;
 import com.hacknitr.wastemanagement.model.WasteMaterial;
+import com.hacknitr.wastemanagement.response.WasteMaterialResponse;
 import com.hacknitr.wastemanagement.sevice.CategoryService;
 import com.hacknitr.wastemanagement.sevice.WasteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +65,13 @@ public class WasteController {
     @GetMapping("/getWasteDetails/{id}")
     public ResponseEntity getWasteProductDetails(@PathVariable("id") Long id){
         WasteMaterial wasteMaterial=this.wasteService.getWasteByUserId(id);
-        return ResponseEntity.ok(wasteMaterial);
+        WasteMaterialResponse wasteMaterialResponse=new WasteMaterialResponse();
+        wasteMaterialResponse.setId(wasteMaterial.getId());
+        wasteMaterialResponse.setName(wasteMaterial.getName());
+        wasteMaterialResponse.setCategoryName(wasteMaterial.getCategory().getCategoryName());
+        wasteMaterialResponse.setPicByte(decompressBytes(wasteMaterial.getPicByte()));
+        wasteMaterialResponse.setUserId(wasteMaterial.getUserId());
+        return ResponseEntity.ok(wasteMaterialResponse);
     }
 
     // compress the image bytes before storing it in the database
