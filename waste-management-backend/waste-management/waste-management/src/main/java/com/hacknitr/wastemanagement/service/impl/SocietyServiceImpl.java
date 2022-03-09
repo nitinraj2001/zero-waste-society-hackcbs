@@ -4,9 +4,11 @@ import com.hacknitr.wastemanagement.model.Society;
 import com.hacknitr.wastemanagement.repository.SocietyRepository;
 import com.hacknitr.wastemanagement.sevice.SocietyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SocietyServiceImpl implements SocietyService {
 
     @Autowired
