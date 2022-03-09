@@ -28,6 +28,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AddWasteComponent } from './user/add-waste/add-waste.component';
 import { NgoRegistrationComponent } from './admin/ngo-registration/ngo-registration.component';
 import { RegisterSocietyComponent } from './admin/register-society/register-society.component';
+import { ViewSocietiesComponent } from './admin/view-societies/view-societies.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { RegisterSocietyComponent } from './admin/register-society/register-soci
     UpdateCategoryComponent,
     AddWasteComponent,
     NgoRegistrationComponent,
-    RegisterSocietyComponent
+    RegisterSocietyComponent,
+    ViewSocietiesComponent
   ],
   imports: [
     BrowserModule,
