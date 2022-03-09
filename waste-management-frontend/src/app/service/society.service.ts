@@ -15,11 +15,11 @@ export class SocietyService {
   }
 
   getAllSocieties(){
-    return this.http.get(`${baseUrl}/society//getAllSociety`)
+    return this.http.get(`${baseUrl}/society/getAllSociety`)
   }
 
   getSocietyDetails(id:any){
-    return this.http.get(`${baseUrl}/society/${id}`)
+    return this.http.get(`${baseUrl}/society/${id}`);
   }
 
   deleteSociety(id:any){

@@ -1,6 +1,8 @@
 package com.hacknitr.wastemanagement.controller;
 
+import com.hacknitr.wastemanagement.model.Category;
 import com.hacknitr.wastemanagement.model.WasteMaterial;
+import com.hacknitr.wastemanagement.sevice.CategoryService;
 import com.hacknitr.wastemanagement.sevice.WasteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +23,17 @@ public class WasteController {
     @Autowired
     private WasteService wasteService;
 
+    @Autowired
+    private CategoryService categoryService;
+
     @PostMapping(value="/",headers = "content-type=multipart/*")
-    public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId) {
+    public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId,@RequestParam("categoryId") Long categoryId) {
         WasteMaterial wasteMaterial = new WasteMaterial();
         wasteMaterial.setName(name);
         wasteMaterial.setDescription(description);
         wasteMaterial.setUserId(userId);
+        Category category=this.categoryService.viewCategory(categoryId);
+        wasteMaterial.setCategory(category);
         try {
             wasteMaterial.setPicByte(compressBytes(file.getBytes()));
         } catch (Exception e) {
@@ -49,6 +56,8 @@ public class WasteController {
     @DeleteMapping("/{id}")
     public ResponseEntity deleteUploadedWaste(@PathVariable("id") Long wasteId){
         this.wasteService.deleteWaste(wasteId);
+
+
         return ResponseEntity.ok("uploaded waste is deleted successfully");
     }
 

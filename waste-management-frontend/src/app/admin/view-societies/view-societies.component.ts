@@ -8,11 +8,39 @@ import {SocietyService} from '../../service/society.service'
 })
 export class ViewSocietiesComponent implements OnInit {
 
+  societies:any=[];
+
+  base64Data: any;
+
+  retrievedImage: string;
+
   society:any={"id":"","name":"","email":"","address":""};
 
   constructor(private societyService:SocietyService) { }
 
   ngOnInit(): void {
+    this.getAllSociety();
   }
+
+  getAllSociety(){
+    this.societyService.getAllSocieties().subscribe((data)=>{
+
+      console.log(data);
+      this.societies=data;
+       this.societies.forEach(element => {
+         this.base64Data=element.picByte;
+       this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+       element.picByte=this.retrievedImage;
+       });
+     },
+     (error)=>{
+       console.log(error);
+     }
+
+    )}
+      
+  
+  
+
 
 }

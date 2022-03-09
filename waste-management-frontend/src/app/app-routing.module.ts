@@ -16,6 +16,8 @@ import { UpdateCategoryComponent } from './admin/update-category/update-category
 import { AddWasteComponent } from './user/add-waste/add-waste.component';
 import { NgoRegistrationComponent } from './admin/ngo-registration/ngo-registration.component';
 import { RegisterSocietyComponent } from './admin/register-society/register-society.component';
+import { ViewSocietiesComponent } from './admin/view-societies/view-societies.component';
+import { ViewSocietyComponent } from './admin/view-society/view-society.component';
 
 
 
@@ -25,7 +27,8 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'user',component:UserdashboardComponent, canActivate:[UserGuard],children:[
     {path:'',component:WelcomePageComponent},
-    {path:'waste',component:AddWasteComponent}
+    {path:'waste',component:AddWasteComponent},
+    {path:'society/:id',component:ViewSocietyComponent}
 
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
@@ -35,7 +38,8 @@ const routes: Routes = [
     {path:'update-category/:id',component:UpdateCategoryComponent},
     {path:'view-user-profile/:id',component:UserProfileComponent},
     {path:'register-ngo',component:NgoRegistrationComponent},
-    {path:'society',component:RegisterSocietyComponent}
+    {path:'society',component:RegisterSocietyComponent},
+    {path:'view-society',component:ViewSocietiesComponent},
   ]}
 ];
 

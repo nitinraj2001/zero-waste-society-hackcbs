@@ -6,11 +6,11 @@
         </td>
         <td width="40%" style="padding: 20px" >
             <h1>Society Registration</h1>
-            <form>
-                <p> <input type="text" placeholder="Enter your society name" class="form-control" id="societyName"  name="SocietylName"></p>
-                <p> <input type="text" placeholder="Enter your email" class="form-control" id="yourEmail"  name="email"></p>
-                <p ><input type="text" placeholder="Enter your address" class="form-control" id="societyaddress" name="address"></p>
-                <p style="color:green;"><input type="file"><i><b>Upload Image of Society</b></i></p>
+            <form (ngSubmit)="registerSociety()">
+                <p> <input type="text" placeholder="Enter your society name" class="form-control" id="societyName"  name="SocietylName" [(ngModel)]="society.name"></p>
+                <p> <input type="text" placeholder="Enter your email" class="form-control" id="yourEmail"  name="email" [(ngModel)]="society.email"></p>
+                <p ><input type="text" placeholder="Enter your address" class="form-control" id="societyaddress" name="address" [(ngModel)]="society.address"></p>
+                <p style="color:green;"><input type="file" (change)="onFileChanged($event)"><i><b>Upload Image of Society</b></i></p>
                 <button type="submit">Submit</button>
             </form>
         

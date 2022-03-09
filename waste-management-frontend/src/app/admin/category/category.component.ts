@@ -15,7 +15,7 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService:CategoryService) { }
 
   ngOnInit(): void {
-    
+
   }
   onFileChanged(event) {
     this.picByte = event.target.files[0]
