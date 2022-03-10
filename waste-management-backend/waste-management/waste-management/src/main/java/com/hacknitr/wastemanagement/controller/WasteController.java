@@ -30,6 +30,7 @@ public class WasteController {
     @PostMapping(value="/",headers = "content-type=multipart/*")
     public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId,@RequestParam("categoryId") Long categoryId) {
         WasteMaterial wasteMaterial = new WasteMaterial();
+        System.out.println(name+" "+categoryId);
         wasteMaterial.setName(name);
         wasteMaterial.setDescription(description);
         wasteMaterial.setUserId(userId);

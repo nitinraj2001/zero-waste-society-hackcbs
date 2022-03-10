@@ -7,14 +7,14 @@
             <td width="40%" style="padding:20px">
                 <h1>Industry Registration</h1>
                 <p><u></u>Hey! You are suggested to register for the industry<u></u></p>
-                <form>
-                    <p> <input type="text" placeholder="Industry Name"  id="NGOname"  name="IndustryName">   </p>
-                    <p ><input type="address" placeholder="Industry Location"  id="address" name="address"></p>
-                    <p><input type="email" placeholder="Email id" name="email" id="email" required></p>
-                    <p><input type="text" placeholder="Description" name="description" id="description" required></p>
+                <form (ngSubmit)="registerIndustry()">
+                    <p> <input type="text" placeholder="Industry Name"  id="NGOname"  name="IndustryName" [(ngModel)]="industry.name">   </p>
+                    <p ><input type="address" placeholder="Industry Location"  id="address" name="address" [(ngModel)]="industry.address"></p>
+                    <p><input type="email" placeholder="Email id" name="email" id="email" required [(ngModel)]="industry.email"></p>
+                    <p><input type="text" placeholder="Description" name="description" id="description" required [(ngModel)]="industry.description"></p>
                     
                     <input type="file" id="files" name="files" multiple>
-                    <input type="text" name="typeofIndustry" list="typeofNGO" placeholder="Select Industry Type">
+                    <input type="text" name="typeofIndustry" list="typeofIndustry" placeholder="Select Industry Type" [(ngModel)]="industry.industryType">
                     <datalist id="typeofIndustry">
                         <option>Thermal Production Recycling</option>
                         <option>Glass Production Recycling</option>
@@ -27,8 +27,8 @@
                         <option>Textile Industry</option>
                         <option>Electronic Recycling</option>
                     </datalist>
-                    <input type="text" name="sector" list="typeofindustrysector" placeholder="Select Industry sector">
-                    <datalist id="typeofIndustry">
+                    <input type="text" name="typeofindustrysector" list="typeofindustrysector" placeholder="Select Industry sector" [(ngModel)]="industry.sector">
+                    <datalist id="typeofindustrysector">
                         <option>Private</option>
                         <option>Public</option>
                     </datalist>

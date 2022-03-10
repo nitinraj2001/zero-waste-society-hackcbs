@@ -32,6 +32,10 @@ import { ViewSocietiesComponent } from './admin/view-societies/view-societies.co
 import { ViewSocietyComponent } from './admin/view-society/view-society.component';
 import { AddIndustryComponent } from './admin/add-industry/add-industry.component';
 import { ViewWasteComponent } from './admin/view-waste/view-waste.component';
+import { ViewNgosComponent } from './admin/view-ngos/view-ngos.component';
+import { ViewIndustryComponent } from './admin/view-industry/view-industry.component';
+import { ViewIndustriesComponent } from './admin/view-industries/view-industries.component';
+import { ClassifyWasteComponent } from './user/classify-waste/classify-waste.component';
 
 
 
@@ -57,7 +61,11 @@ import { ViewWasteComponent } from './admin/view-waste/view-waste.component';
     ViewSocietiesComponent,
     ViewSocietyComponent,
     AddIndustryComponent,
-    ViewWasteComponent
+    ViewWasteComponent,
+    ViewNgosComponent,
+    ViewIndustryComponent,
+    ViewIndustriesComponent,
+    ClassifyWasteComponent
   ],
   imports: [
     BrowserModule,

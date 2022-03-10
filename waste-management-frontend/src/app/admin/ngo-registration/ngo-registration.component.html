@@ -6,14 +6,14 @@
         <td width="40%" style="padding: 20px" >
             <marquee direction="left" height="100" width="500" style="color: brown;" ><i>Welcome to My Swachta App Register an NGO here</i></marquee>
 
-            <form>
-                <p> <input type="text" placeholder="NGO Name"  id="NGOname"  name="NGOname">   </p>
-                <p ><input type="address" placeholder="NGO Location"  id="address" name="address"></p>
-                <p><input type="email" placeholder="Email id" name="email" id="email" required></p>
-                <p><input type="text" placeholder="Description" name="description" id="description" required></p>
+            <form (ngSubmit)="registerNGO()">
+                <p> <input type="text" placeholder="NGO Name"  id="NGOname"  name="NGOname" [(ngModel)]="ngo.name">   </p>
+                <p ><input type="address" placeholder="NGO Location"  id="address" name="address" [(ngModel)]="ngo.location"></p>
+                <p><input type="email" placeholder="Email id" name="email" id="email" required [(ngModel)]="ngo.email"></p>
+                <p><input type="text" placeholder="Description" name="description" id="description" required [(ngModel)]="ngo.description"></p>
                 
-                <input type="file" id="files" name="files" multiple>
-                <input type="text" name="typeofNGO" list="typeofNGO" placeholder="Select NGO Type">
+                <input type="file" id="files" name="files" multiple (change)="onFileChanged($event)">
+                <input type="text" name="typeofNGO" list="typeofNGO" placeholder="Select NGO Type" [(ngModel)]="ngo.ngoType">
                 <datalist id="typeofNGO">
                     <option>Non-profit</option>
                     <option>Profitable</option>

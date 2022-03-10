@@ -23,12 +23,13 @@ public class NGOController {
     private NGOService ngoService;
 
     @PostMapping(value="/",headers = "content-type=multipart/*")
-    public ResponseEntity<?> registerNGO(@RequestParam("ngoDocument") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("ngoType") String ngoType,@RequestParam("location") String location) throws IOException {
+    public ResponseEntity<?> registerNGO(@RequestParam("ngoDocument") MultipartFile file, @RequestParam("name") String name,@RequestParam("email") String email, @RequestParam("description") String description,@RequestParam("ngoType") String ngoType,@RequestParam("location") String location) throws IOException {
 
         NGO ngo=new NGO();
         ngo.setName(name);
         ngo.setDescription(description);
         ngo.setNgoType(ngoType);
+        ngo.setEmailId(email);
         ngo.setLocation(location);
         try {
             ngo.setPicByte(compressBytes(file.getBytes()));

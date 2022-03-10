@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    margin: 0px;
+}
+section {
+    text-align: center;
+    padding-top:40px;
+    height:80vh;
+}
+section:first-child{
+    margin-top:1px;
+    background-image: url("https://www.engie.com/sites/default/files/assets/images/2021-02/Header_industrie.jpg");
+    opacity: 0.9;
+
+}
+section:nth-child(even){
+    background-color:white;
+    height:50vh;
+}  
+section:nth-child(even) h1{
+    font-family: sans-serif;
+    color:rgb(55, 0, 255);
+    margin-bottom:20px;
+    font-size: 50px; 
+} 
+section:nth-child(even) b{
+    font-family: sans-serif;
+    color:rgb(0, 89, 255);
+    margin-bottom:20px;
+    font-size: 18px; 
+} 
+section:nth-child(even) p{
+    padding-bottom:10px ;
+    font-family: sans-serif;
+    color:rgb(4, 0, 255);
+    margin-bottom:20px;
+    font-size:18px; 
+}
+
+.how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #ffa500;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: #3931af;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 40%;
+}

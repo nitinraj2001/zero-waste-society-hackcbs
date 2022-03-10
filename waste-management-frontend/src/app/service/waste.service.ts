@@ -5,11 +5,11 @@ import baseUrl from './helper';
 @Injectable({
   providedIn: 'root'
 })
-export class NGOService {
+export class WasteService {
 
   constructor(private http:HttpClient) { }
 
-  registerNgo(ngo){
-    return this.http.post(`${baseUrl}/ngo/`,ngo);
+  registerYourWaste(waste:any){
+    return this.http.post(`${baseUrl}/waste/`,waste);
   }
 }

@@ -20,6 +20,8 @@ import { ViewSocietiesComponent } from './admin/view-societies/view-societies.co
 import { ViewSocietyComponent } from './admin/view-society/view-society.component';
 import { AddIndustryComponent } from './admin/add-industry/add-industry.component';
 import { ViewWasteComponent } from './admin/view-waste/view-waste.component';
+import { ViewNgosComponent } from './admin/view-ngos/view-ngos.component';
+import { ViewIndustryComponent } from './admin/view-industry/view-industry.component';
 
 
 
@@ -42,8 +44,11 @@ const routes: Routes = [
     {path:'register-ngo',component:NgoRegistrationComponent},
     {path:'society',component:RegisterSocietyComponent},
     {path:'view-society',component:ViewSocietiesComponent},
+    {path:'society/:id',component:ViewSocietyComponent},
     {path:'add-industry',component:AddIndustryComponent},
-    {path:'view-waste',component:ViewWasteComponent}
+    {path:'view-waste',component:ViewWasteComponent},
+    {path:'view-ngos',component:ViewNgosComponent},
+    {path:'view-industry/:id',component:ViewIndustryComponent}
   ]}
 ];
 

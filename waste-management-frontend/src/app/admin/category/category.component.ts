@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import {CategoryService} from '../../services/category.service'
 
 @Component({
@@ -12,7 +14,7 @@ export class CategoryComponent implements OnInit {
   picByte: any;
   categoryId:any;
 
-  constructor(private categoryService:CategoryService) { }
+  constructor(private categoryService:CategoryService,private route:Router) { }
 
   ngOnInit(): void {
 
@@ -31,6 +33,8 @@ export class CategoryComponent implements OnInit {
     this.categoryService.registerWasteCategory(formdata).subscribe(
       (data)=>{
         console.log(data);
+        Swal.fire("waste category is added successfully");
+        this.route.navigate(['/admin/view-categories']);
         
       },
       (error)=>{

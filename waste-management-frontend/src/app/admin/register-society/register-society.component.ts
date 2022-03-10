@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SocietyService } from 'src/app/service/society.service';
 import Swal from 'sweetalert2';
 
@@ -12,7 +13,7 @@ export class RegisterSocietyComponent implements OnInit {
   society:any={"id":"","name":"","email":"","address":""};
   picByte: any;
 
-  constructor(private societyService:SocietyService) { }
+  constructor(private societyService:SocietyService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -33,7 +34,7 @@ export class RegisterSocietyComponent implements OnInit {
       this.societyService.registerSociety(formdata).subscribe(
         (data)=>{
           console.log(data);
-          Swal.fire("society is registered successfully");
+           this.snackBar.open("society registered successfully","success");
         },
         (error)=>{
           console.log(error);
