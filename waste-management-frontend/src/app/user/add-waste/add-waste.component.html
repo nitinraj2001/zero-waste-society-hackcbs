@@ -8,16 +8,16 @@
                 </td>
                 <td width="40%"  style="padding: 20px" >
                     <h1>Add Waste Material</h1>
-                    <form>
-                        <p> <input type="text" placeholder="Enter waste material name" class="form-control" id="wasteMaterialName"  name="wasteMaterialName">   </p>
-                        <p ><input type="text" placeholder="Enter  description" class="form-control" id="wasteMaterialDescription" name="description"></p>
-                        <input type="text" name="typeofNGO" list="typeofNGO" placeholder="Select NGO Type">
+                    <form (ngSubmit)="registerWaste()">
+                        <p> <input type="text" placeholder="Enter waste material name" class="form-control" id="wasteMaterialName"  name="wasteMaterialName" [(ngModel)]="waste.name">   </p>
+                        <p ><input type="text" placeholder="Enter  description" class="form-control" id="wasteMaterialDescription" name="description" [(ngModel)]="waste.description"></p>
+                        <input type="text" name="typeofNGO" list="typeofNGO" placeholder="Select Waste category Type" [(ngModel)]="categoryName">
                 <datalist id="typeofNGO">
-                    <option>Re</option>
-                    <option>Profitable</option>
-                    <option>Social Benefit Organization</option>
+                    <option>Recycle</option>
+                    <option>Reusable</option>
+                    <option>Neither Recycle nor reusable</option>
                 </datalist>
-                        <p style="color:green;"><input type="file"><i><b>Upload Image of Waste Material</b></i></p>
+                        <p style="color:green;"><input type="file" (change)="onFileChanged($event)"><i><b>Upload Image of Waste Material</b></i></p>
                         <button type="submit">Submit</button>
                     </form>
                 

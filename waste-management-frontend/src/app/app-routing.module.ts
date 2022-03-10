@@ -18,6 +18,7 @@ import { NgoRegistrationComponent } from './admin/ngo-registration/ngo-registrat
 import { RegisterSocietyComponent } from './admin/register-society/register-society.component';
 import { ViewSocietiesComponent } from './admin/view-societies/view-societies.component';
 import { ViewSocietyComponent } from './admin/view-society/view-society.component';
+import { AddIndustryComponent } from './admin/add-industry/add-industry.component';
 
 
 
@@ -40,6 +41,7 @@ const routes: Routes = [
     {path:'register-ngo',component:NgoRegistrationComponent},
     {path:'society',component:RegisterSocietyComponent},
     {path:'view-society',component:ViewSocietiesComponent},
+    {path:'add-industry',component:AddIndustryComponent},
   ]}
 ];
 
