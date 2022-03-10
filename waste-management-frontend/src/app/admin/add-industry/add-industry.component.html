@@ -1,1 +1,43 @@
-<p>add-industry works!</p>
+<div>
+    <table width="80%" height="800px" style="text-align:center">
+        <tr>
+            <td width="40%" style="color:white;padding:20px">
+            <img src="https://ci6.googleusercontent.com/proxy/yERnpKflPIOUlfSE7fphiw2PgM3LCmDZQjND3gB1ppCugPMnxm3PXOCIaCp_-QNhHGlIOszt-YfTRhs1jWQDnGUMZfCkKyXeV-eQhepGG4IhKJXsaCsfEoD23aMQo-SkdQ=s0-d-e1-ft#https://bwaste.com/themes/bws/images/blog_images/architecture-1639990_1920.jpg" style="height:500px; width:100%">
+            </td>
+            <td width="40%" style="padding:20px">
+                <h1>Industry Registration</h1>
+                <p><u></u>Hey! You are suggested to register for the industry<u></u></p>
+                <form>
+                    <p> <input type="text" placeholder="Industry Name"  id="NGOname"  name="IndustryName">   </p>
+                    <p ><input type="address" placeholder="Industry Location"  id="address" name="address"></p>
+                    <p><input type="email" placeholder="Email id" name="email" id="email" required></p>
+                    <p><input type="text" placeholder="Description" name="description" id="description" required></p>
+                    
+                    <input type="file" id="files" name="files" multiple>
+                    <input type="text" name="typeofIndustry" list="typeofNGO" placeholder="Select Industry Type">
+                    <datalist id="typeofIndustry">
+                        <option>Thermal Production Recycling</option>
+                        <option>Glass Production Recycling</option>
+                        <option>Biodegradable</option>
+                        <option>Straw and Grass Reycling</option>
+                        <option>LPG Production</option>
+                        <option>Plastic Recycling</option>
+                        <option>Rubber Recycling</option>
+                        <option>Leather Industry</option>
+                        <option>Textile Industry</option>
+                        <option>Electronic Recycling</option>
+                    </datalist>
+                    <input type="text" name="sector" list="typeofindustrysector" placeholder="Select Industry sector">
+                    <datalist id="typeofIndustry">
+                        <option>Private</option>
+                        <option>Public</option>
+                    </datalist>
+                    <mat-action>
+                        <button type="submit" mat-raised-button>Submit</button>
+                    </mat-action>
+                    
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
