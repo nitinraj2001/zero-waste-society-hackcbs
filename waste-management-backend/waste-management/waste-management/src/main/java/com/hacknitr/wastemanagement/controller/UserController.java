@@ -5,8 +5,12 @@ import java.util.List;
 import java.util.Set;
 
 import com.hacknitr.wastemanagement.exception.UserWithSameUsernameFoundException;
+import com.hacknitr.wastemanagement.model.*;
+import com.hacknitr.wastemanagement.sevice.EmailService;
+import com.hacknitr.wastemanagement.sevice.TwilioMessageSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,9 +21,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hacknitr.wastemanagement.model.Role;
-import com.hacknitr.wastemanagement.model.User;
-import com.hacknitr.wastemanagement.model.UserRole;
 import com.hacknitr.wastemanagement.sevice.UserService;
 
 
@@ -27,9 +28,16 @@ import com.hacknitr.wastemanagement.sevice.UserService;
 @CrossOrigin("*")
 @RequestMapping("/user")
 public class UserController {
-	
+
+	@Autowired
+	private TwilioMessageSenderService twilioService;
+
+
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private EmailService emailService;
 	
 	@Autowired
 	private BCryptPasswordEncoder bcryptPasswordEncorder;
@@ -79,6 +87,36 @@ public class UserController {
 	public List<User> getAllUsers(){
 
 		return this.userService.findAllUsers();
+	}
+
+	@PostMapping("/sendSMS")
+	public String sendSMSByTwillo(@RequestBody MessageModel messageRequest) {
+		String sendMessageResponse = twilioService.sendMessage(messageRequest);
+		return sendMessageResponse;
+	}
+
+	@PostMapping("/sendMail")
+	public ResponseEntity sendMail(@RequestBody MailRequest mailRequest){
+
+		SimpleMailMessage mailMessage=new SimpleMailMessage();
+
+		mailMessage.setTo(mailRequest.getEmail());
+
+		mailMessage.setSubject("Waste Pick Up Response");
+
+		mailMessage.setText("we r got ur request for waste pickup please be there on time");
+
+		try {
+			emailService.sendEmail(mailMessage);
+
+		}
+
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		return ResponseEntity.ok("mail is send successfully");
+
 	}
 
 

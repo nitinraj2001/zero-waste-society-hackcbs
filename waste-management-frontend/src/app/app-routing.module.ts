@@ -22,6 +22,8 @@ import { AddIndustryComponent } from './admin/add-industry/add-industry.componen
 import { ViewWasteComponent } from './admin/view-waste/view-waste.component';
 import { ViewNgosComponent } from './admin/view-ngos/view-ngos.component';
 import { ViewIndustryComponent } from './admin/view-industry/view-industry.component';
+import { SchedulePickupComponent } from './user/schedule-pickup/schedule-pickup.component';
+import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component';
 
 
 
@@ -32,7 +34,9 @@ const routes: Routes = [
   {path:'user',component:UserdashboardComponent, canActivate:[UserGuard],children:[
     {path:'',component:WelcomePageComponent},
     {path:'waste',component:AddWasteComponent},
-    {path:'society/:id',component:ViewSocietyComponent}
+    {path:'society/:id',component:ViewSocietyComponent},
+    {path:'schedule-pickup',component:SchedulePickupComponent},
+    {path:'view-ngo-map',component:ViewNgoMapComponent}
 
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[

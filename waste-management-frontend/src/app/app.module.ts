@@ -36,6 +36,8 @@ import { ViewNgosComponent } from './admin/view-ngos/view-ngos.component';
 import { ViewIndustryComponent } from './admin/view-industry/view-industry.component';
 import { ViewIndustriesComponent } from './admin/view-industries/view-industries.component';
 import { ClassifyWasteComponent } from './user/classify-waste/classify-waste.component';
+import { SchedulePickupComponent } from './user/schedule-pickup/schedule-pickup.component';
+import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component';
 
 
 
@@ -65,7 +67,9 @@ import { ClassifyWasteComponent } from './user/classify-waste/classify-waste.com
     ViewNgosComponent,
     ViewIndustryComponent,
     ViewIndustriesComponent,
-    ClassifyWasteComponent
+    ClassifyWasteComponent,
+    SchedulePickupComponent,
+    ViewNgoMapComponent
   ],
   imports: [
     BrowserModule,
