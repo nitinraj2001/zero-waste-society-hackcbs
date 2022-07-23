@@ -34,6 +34,11 @@ public class WasteServiceImpl implements WasteService {
     }
 
     @Override
+    public List<WasteMaterial> getAllWastes() {
+        return this.wasteRepository.findAll();
+    }
+
+    @Override
     public WasteMaterial getWasteByUserId(Long id) {
         return this.wasteRepository.findWasteByUserId(id);
     }

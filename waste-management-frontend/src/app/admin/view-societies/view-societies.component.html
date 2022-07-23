@@ -1,20 +1,25 @@
-<!-- Cards with media area -->
-<section class="columns">
-    <div class="col" *ngFor="let society of societies">
-      <div class="card">
-        <div class="card-details">
-            <img src="{{society.picByte}}" alt="waste-mmaterial" style="height: 150px;">
-          <h3 style="color:red" class="card-heading">{{society.name}}</h3>
-          <h4 class="card-subtitle">{{society.email}}</h4>
-          <p class="card-description">
-            {{society.address}}
-          </p>
-        </div>
-        <div class="card-actions">
-          <a mat-raised-button color="primary" routerLink="/admin/society/1">View society</a>&nbsp;
-          <button mat-raised-button color="warn">Delete society</button>
-        </div>
-      </div>  
-    </div>
-   
-  </section>
+<h4 style="margin-top: 5%; margin-left:5%; color:red">List of Registered Industries In My Swachhta App</h4>
+<div class="container">  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+           <th style="text-align: left;">Image</th>
+            <th style="text-align: left;">Name</th>
+            <th style="text-align: left;">email</th>
+            <th style="text-align: left;">address</th>
+            <th style="text-align: left;">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let society of societies">
+            <td> <img src="{{society.picByte}}" class="img-fluid img-thumbnail" style="max-height: 20%;"alt="Sheep"></td>
+            <td>{{society.name}}</td>
+            <td>{{society.email}}</td>
+            <td>{{society.address}}</td>
+            <td><button mat-raised-button  color="accent">view</button> </td>
+          </tr>
+          
+        </tbody>
+      </table> 
+    
+</div>

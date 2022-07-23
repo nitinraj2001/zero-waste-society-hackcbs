@@ -13,6 +13,10 @@ export class IndustryService {
     return this.http.post(`${baseUrl}/industry/`,industry);
   }
 
+  fetchAllIndustriesDetails(){
+    return this.http.get(`${baseUrl}/industry/getAllIndustries`);
+  }
+
   getIndustryDetails(id:any){
     return this.http.get(`${baseUrl}/industry/${id}`);
   }

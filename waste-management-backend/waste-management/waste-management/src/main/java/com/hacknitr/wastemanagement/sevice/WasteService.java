@@ -14,6 +14,8 @@ public interface WasteService {
 
     public List<WasteMaterial> getAllWasteMaterialsByUserId(Long userId);
 
+    public List<WasteMaterial> getAllWastes();
+
     public WasteMaterial getWasteByUserId(Long id);
 
 

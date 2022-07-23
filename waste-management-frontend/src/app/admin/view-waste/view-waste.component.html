@@ -1,23 +1,32 @@
-<div>
-    <table width="80%" height="800px" style="text-align: center;">
-        <tr>
-            <td width="40%" style="color:white;padding:20px">
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-image">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">View Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let waste of wastes">
+                <th scope="row">{{waste.id}}</th>
+                <td class="w-25">
+                    <img src="{{waste.picByte}}" class="img-fluid img-thumbnail" alt="Sheep">
+                </td>
+                <td>{{waste.description}}</td>
+                <td>{{waste.name}}</td>
+                <td>Biodegradable waste</td>
+                <button mat-raised-button color="warn" style="margin: right 10%;  margin-top:2%; width:100%">View Activity</button>
             
-            <img src="https://ci5.googleusercontent.com/proxy/w04rN9FsER24oWytH3Cycr38f6nvWRLAd0Y8saZQbPfesN8sS7vqTsGbFrxGJhdU2ooFmfWuxMRXTa25mkhMEV3jt4IrMReP1Z8LUw2Qcqoj_fG81CZlh7GYHE_mr9gi=s0-d-e1-ft#https://www.centurywastemanagement.com/wp-content/uploads/2020/12/image-4.png">
-            </td>
-            <td width="40%" style="padding:20px">
-                <h1>View Waste Material</h1>
-                <hr>
-                <p><u></u>Here you can view your waste !<u></u></p>
-                <br>
-                <p><b style="color:red">Waste Name</b> : Plastic</p><br>
-                <p><b>Description</b> : Plastics are a wide range of synthetic or semi-synthetic materials that use polymers.</p><br>
-                <p>Category Name:  Municipal Solid Waste (MSW)</p>
-                <button mat-raised-button color="warn">View Waste Activity</button>
-                <i class="m_fa m_fa-arrow-circle-left" style="font-size:48px;color:rgb(16,156,250)"></i>
-            </td>
-        </tr>
-    </table>
-
-    
-</div>
+              </tr>
+             
+            </tbody>
+          </table>   
+      </div>
+    </div>
+  </div>

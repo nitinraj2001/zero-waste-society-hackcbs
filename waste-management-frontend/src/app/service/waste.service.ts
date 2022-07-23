@@ -12,4 +12,8 @@ export class WasteService {
   registerYourWaste(waste:any){
     return this.http.post(`${baseUrl}/waste/`,waste);
   }
+
+  getAllWastes(){
+    return this.http.get(`${baseUrl}/waste/getAllWastes`);
+  }
 }

@@ -38,7 +38,7 @@ import { ViewIndustriesComponent } from './admin/view-industries/view-industries
 import { ClassifyWasteComponent } from './user/classify-waste/classify-waste.component';
 import { SchedulePickupComponent } from './user/schedule-pickup/schedule-pickup.component';
 import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component';
-
+import { ViewAllIndustriesComponent } from './admin/view-all-industries/view-all-industries.component';
 
 
 @NgModule({
@@ -69,7 +69,8 @@ import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component'
     ViewIndustriesComponent,
     ClassifyWasteComponent,
     SchedulePickupComponent,
-    ViewNgoMapComponent
+    ViewNgoMapComponent,
+    ViewAllIndustriesComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +80,7 @@ import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component'
     MatButtonModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDKrOj0daB7G8s-tFqykodZ-zCt17O3590',
+      apiKey: 'AIzaSyCdbAGiz9-vhYhrtegBjdxV1SDffe_wyB0',
       libraries: ['places']
     }),
     MatSnackBarModule,

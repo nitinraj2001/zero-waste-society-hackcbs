@@ -12,6 +12,9 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class UserdashboardComponent implements OnInit {
 
+  latitude: number;
+  longitude: number;
+  zoom:number;
   username:any;
   user:any;
   jwtTokenStatus: any;
@@ -50,6 +53,16 @@ export class UserdashboardComponent implements OnInit {
   this.route.navigate(['/login']);
   
   this.snakeBar.open("you have successfully logout!!","ok",{duration:3000});
+}
+
+private setCurrentLocation() {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.latitude = position.coords.latitude;
+      this.longitude = position.coords.longitude;
+      this.zoom = 15;
+    });
+  }
 }
 
 

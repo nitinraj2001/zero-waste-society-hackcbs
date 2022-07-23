@@ -75,6 +75,15 @@ public class WasteController {
         return ResponseEntity.ok(wasteMaterialResponse);
     }
 
+    @GetMapping("/getAllWastes")
+    public ResponseEntity<List<WasteMaterial>> getAllWastes(){
+        List<WasteMaterial> wastes=wasteService.getAllWastes();
+        for(WasteMaterial wasteMaterial:wastes) {
+            wasteMaterial.setPicByte(decompressBytes(wasteMaterial.getPicByte()));
+        }
+        return ResponseEntity.ok(wastes);
+    }
+
     // compress the image bytes before storing it in the database
     public static byte[] compressBytes(byte[] data) {
         Deflater deflater = new Deflater();

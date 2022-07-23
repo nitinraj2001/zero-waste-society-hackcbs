@@ -34,8 +34,7 @@ export class NgoRegistrationComponent implements OnInit {
     console.log(formdata);
       this.ngoService.registerNgo(formdata).subscribe((data)=>{
       console.log(data);
-      this.matSnackbar.open("ngo registered successfgully","ok");
-      this.route.navigate(['/admin/view-ngos']);
+      Swal.fire("Ngo registered successifully","success");
     })
   }
 

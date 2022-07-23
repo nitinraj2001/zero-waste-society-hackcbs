@@ -45,10 +45,6 @@ public class TwilioMessageSenderService {
             System.out.println(creator);
             Message create = creator.create();
 
-            BigDecimal billingAmount = create.getPrice();
-            Message.Status status = create.getStatus();
-
-
             logger.info("Message Send Succesfully to the number " + mobileNumber);
             return "Message Send Succesfully";
         } catch (Exception e) {

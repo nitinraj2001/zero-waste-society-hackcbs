@@ -1,5 +1,6 @@
 package com.hacknitr.wastemanagement.controller;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -85,7 +86,10 @@ public class UserController {
 
 	@GetMapping("/")
 	public List<User> getAllUsers(){
-
+		List<User> users=new ArrayList<User>();
+		for(User theuser:users){
+			System.out.println(theuser.getUsername()+" "+theuser.getEmail());
+		}
 		return this.userService.findAllUsers();
 	}
 

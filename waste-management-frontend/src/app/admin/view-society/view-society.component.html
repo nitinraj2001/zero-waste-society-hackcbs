@@ -1,29 +1,25 @@
-<div>
-    <section>
-        
-      
-
-    </section>
+<h4 style="margin-top: 5%; margin-left:5%; color:red">List of Registered Industries In My Swachhta App</h4>
+<div class="container">  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+           <th style="text-align: left;">Image</th>
+            <th style="text-align: left;">Name</th>
+            <th style="text-align: left;">email</th>
+            <th style="text-align: left;">address</th>
+            <th style="text-align: left;">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let society of societies">
+            <td> <img src="{{society.picByte}}" class="img-fluid img-thumbnail" style="max-height: 20%;"alt="Sheep"></td>
+            <td>{{society.name}}</td>
+            <td>{{society.email}}</td>
+            <td>{{society.address}}</td>
+            <td><button mat-raised-button  color="accent">view</button> </td>
+          </tr>
+          
+        </tbody>
+      </table> 
     
-           <section>
-            <h1>Paramount Symphony</h1>
-            <h2>Ghaziabad , Crossing Republik , Dundahera. <br>(201009) Uttar Pradesh</h2>
-            <h5>Paramount Symphony in Crossing Republik , Ghaziabad.The Society is a ready-to-move housing society , specifically designed to suit your requirements and conven. <br> To connect with our team for Society Waste Management , register for the residence. <br> Owner Name : Taniya Goel <br>Mobile Number : 9897166928 <br> Email : <a href="mailto:taniya6560goelabesit@gmail.com" target="_blank" rel="noreferrer">taniya6560goelabesit@gmail.com</a></h5> 
-            
-            <strong>Waste Collector Importance to Society:</strong>
-            <p>Garbage collectors serve a vital role in our society by helping to manage waste, which if allowed to build up, could pose enormous health and environmental issues. They work either for the municipal government or for private waste management companies to dispose them in a better way.</p>
-        
-        
-                <strong> Top Facilities in Paramount Symphony:</strong>
-                <p>Swimming Pool, Business Lounge, Laundry, Conference Room, Pergola, High speed Elevators, Piped Gas, Spa, Grocery Shop.</p>
-
-                <strong>About:</strong>
-                <p>Symphony is a beautiful and grand residential complex that is designed in a way to offer you a luxurious life. This project is designed to fit the lifestyle of common people. It is equipped with all the modern facilities that are usually required by individuals in their daily life for a comfortable.</p>
-                
-            
-        
-
-           </section>
-                
-
 </div>

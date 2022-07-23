@@ -24,6 +24,7 @@ import { ViewNgosComponent } from './admin/view-ngos/view-ngos.component';
 import { ViewIndustryComponent } from './admin/view-industry/view-industry.component';
 import { SchedulePickupComponent } from './user/schedule-pickup/schedule-pickup.component';
 import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component';
+import { ViewIndustriesComponent } from './admin/view-industries/view-industries.component';
 
 
 
@@ -47,11 +48,12 @@ const routes: Routes = [
     {path:'view-user-profile/:id',component:UserProfileComponent},
     {path:'register-ngo',component:NgoRegistrationComponent},
     {path:'society',component:RegisterSocietyComponent},
-    {path:'view-society',component:ViewSocietiesComponent},
+    {path:'view-society',component:ViewSocietyComponent},
     {path:'society/:id',component:ViewSocietyComponent},
     {path:'add-industry',component:AddIndustryComponent},
     {path:'view-waste',component:ViewWasteComponent},
     {path:'view-ngos',component:ViewNgosComponent},
+    {path:'view-industries',component:ViewIndustriesComponent},
     {path:'view-industry/:id',component:ViewIndustryComponent}
   ]}
 ];

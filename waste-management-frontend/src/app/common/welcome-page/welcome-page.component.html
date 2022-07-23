@@ -1,8 +1,14 @@
 <div class="input-group" style="width:90%; margin-top: 1%;">
   <h4><i style="color: red;">Search Nearby Slum Areas</i></h4> &nbsp;
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" (keydown.enter)="$event.preventDefault()" aria-describedby="search-addon" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search />
   &nbsp;<button type="button" class="btn btn-outline-primary">search</button>
 </div><br><br>
+
+<!-- app.component.html -->
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+  <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+    (dragEnd)="markerDragEnd($event)"></agm-marker>
+</agm-map>
 <main>
   <section style="margin-top:-3%;">
       <h2 style="color:crimson">ABOUT WASTE2RECYCLE</h2>
