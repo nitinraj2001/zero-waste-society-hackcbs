@@ -39,6 +39,9 @@ import { ClassifyWasteComponent } from './user/classify-waste/classify-waste.com
 import { SchedulePickupComponent } from './user/schedule-pickup/schedule-pickup.component';
 import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component';
 import { ViewAllIndustriesComponent } from './admin/view-all-industries/view-all-industries.component';
+import { ManageWasteComponent } from './common/manage-waste/manage-waste.component';
+import { FactsComponent } from './common/facts/facts.component';
+import { AboutComponent } from './common/about/about.component';
 
 
 @NgModule({
@@ -70,7 +73,10 @@ import { ViewAllIndustriesComponent } from './admin/view-all-industries/view-all
     ClassifyWasteComponent,
     SchedulePickupComponent,
     ViewNgoMapComponent,
-    ViewAllIndustriesComponent
+    ViewAllIndustriesComponent,
+    ManageWasteComponent,
+    FactsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

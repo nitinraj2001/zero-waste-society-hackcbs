@@ -25,6 +25,9 @@ import { ViewIndustryComponent } from './admin/view-industry/view-industry.compo
 import { SchedulePickupComponent } from './user/schedule-pickup/schedule-pickup.component';
 import { ViewNgoMapComponent } from './user/view-ngo-map/view-ngo-map.component';
 import { ViewIndustriesComponent } from './admin/view-industries/view-industries.component';
+import { ManageWasteComponent } from './common/manage-waste/manage-waste.component';
+import { FactsComponent } from './common/facts/facts.component';
+import { AboutComponent } from './common/about/about.component';
 
 
 
@@ -32,6 +35,9 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
+  {path:'facts',component:FactsComponent},
+  {path:'about',component:AboutComponent},
+  {path:'manage-waste',component:ManageWasteComponent},
   {path:'user',component:UserdashboardComponent, canActivate:[UserGuard],children:[
     {path:'',component:WelcomePageComponent},
     {path:'waste',component:AddWasteComponent},
