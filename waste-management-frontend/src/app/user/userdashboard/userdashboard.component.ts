@@ -51,6 +51,7 @@ export class UserdashboardComponent implements OnInit {
    console.log("request to logout came");
   this.loginService.logout();
   this.route.navigate(['/login']);
+  window.location.reload();
   
   this.snakeBar.open("you have successfully logout!!","ok",{duration:3000});
 }

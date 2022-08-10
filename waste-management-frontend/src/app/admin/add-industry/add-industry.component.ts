@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 import {IndustryService} from '../../service/industry.service';
 
 @Component({
@@ -18,10 +19,10 @@ export class AddIndustryComponent implements OnInit {
 
   registerIndustry(){
     this.industryService.register(this.industry).subscribe((data)=>{
-      this.snakeBar.open("industry registered successfully","ok");
+      Swal.fire("success!!","industry is successfully added","success");
     }),
     (error)=>{
-      this.snakeBar.open("not able to register industry try again!","ok");
+      Swal.fire("error!!","industry is not added due to some reasons","error");
     }
   }
 

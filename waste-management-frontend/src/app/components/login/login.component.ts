@@ -56,11 +56,13 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['user']);
           this.loginService.loginStatusSubject.next(true);
           this.snakeBar.open("user is successfully logged in","ok");
+          window.location.reload();
         }
         else if(this.theuser.authorities[0].authority=='ADMIN'){
           this.router.navigate(['admin']);
           this.loginService.loginStatusSubject.next(true);
           this.snakeBar.open("admin is successfully logged in","ok");
+          window.location.reload();
         }
         else{
           this.loginService.logout();

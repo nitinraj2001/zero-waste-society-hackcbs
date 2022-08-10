@@ -6,7 +6,7 @@
         <td width="40%" style="padding: 20px" >
             <marquee direction="left" height="100" width="500" style="color: brown;" ><i>Welcome to My Swachta App Register an NGO here</i></marquee>
 
-            <form (ngSubmit)="registerNGO()">
+            <form (ngSubmit)="registerNGO()" style="margin: -12%;">
                 <p> <input type="text" placeholder="NGO Name"  id="NGOname"  name="NGOname" [(ngModel)]="ngo.name">   </p>
                 <p ><input type="address" placeholder="NGO Location"  id="address" name="address" [(ngModel)]="ngo.location"></p>
                 <p><input type="email" placeholder="Email id" name="email" id="email" required [(ngModel)]="ngo.email"></p>
@@ -19,8 +19,7 @@
                     <option>Profitable</option>
                     <option>Social Benefit Organization</option>
                 </datalist>
-                <button type="clear">Clear</button>
-                <button type="submit">Submit</button>
+                <button type="submit" style="margin-right:40%;">Submit</button>
                 
             </form>
         </td>

@@ -12,4 +12,8 @@ export class NGOService {
   registerNgo(ngo){
     return this.http.post(`${baseUrl}/ngo/`,ngo);
   }
+
+  getAllNGOS(){
+    return this.http.get(`${baseUrl}/ngo/getAllNGO`);
+  }
 }

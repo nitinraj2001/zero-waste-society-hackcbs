@@ -11,7 +11,7 @@ import { RegisterService } from './../../service/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  user:any={"username":"","email":"","password":"","phonenumber":""}
+  user:any={"username":"","email":"","password":"","phonenumber":"","societyName":""}
 
   confirmPassword:any;
 

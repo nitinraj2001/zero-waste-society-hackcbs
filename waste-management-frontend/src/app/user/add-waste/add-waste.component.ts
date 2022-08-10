@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import Swal from 'sweetalert2';
 import { WasteService} from '../../service/waste.service';
 
 @Component({
@@ -58,7 +59,7 @@ export class AddWasteComponent implements OnInit {
     console.log(formdata);
     this.wasteService.registerYourWaste(formdata).subscribe((data)=>{
       console.log(data);
-      this.matsnackBar.open("waste is uploaded","ok");
+      Swal.fire("success!!","waste is uploaded successfully now u can perform action as per type of waste reusable recycle reducable","success");
 
     })
 

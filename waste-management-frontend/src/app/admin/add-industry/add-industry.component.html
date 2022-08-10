@@ -1,13 +1,12 @@
-<div>
+<div style="margin-top:-10%;">
     <table width="80%" height="800px" style="text-align:center">
         <tr>
             <td width="40%" style="color:white;padding:20px">
-            <img src="https://ci6.googleusercontent.com/proxy/yERnpKflPIOUlfSE7fphiw2PgM3LCmDZQjND3gB1ppCugPMnxm3PXOCIaCp_-QNhHGlIOszt-YfTRhs1jWQDnGUMZfCkKyXeV-eQhepGG4IhKJXsaCsfEoD23aMQo-SkdQ=s0-d-e1-ft#https://bwaste.com/themes/bws/images/blog_images/architecture-1639990_1920.jpg" style="height:500px; width:100%">
+            <img src="../../../assets/industry.jpg" style="height:500px; width:120%">
             </td>
             <td width="40%" style="padding:20px">
                 <h1>Industry Registration</h1>
-                <p><u></u>Hey! You are suggested to register for the industry<u></u></p>
-                <form (ngSubmit)="registerIndustry()">
+                <form (ngSubmit)="registerIndustry()" style="margin-top:-8%;">
                     <p> <input type="text" placeholder="Industry Name"  id="NGOname"  name="IndustryName" [(ngModel)]="industry.name">   </p>
                     <p ><input type="address" placeholder="Industry Location"  id="address" name="address" [(ngModel)]="industry.address"></p>
                     <p><input type="email" placeholder="Email id" name="email" id="email" required [(ngModel)]="industry.email"></p>
@@ -20,7 +19,6 @@
                         <option>Glass Production Recycling</option>
                         <option>Biodegradable</option>
                         <option>Straw and Grass Reycling</option>
-                        <option>LPG Production</option>
                         <option>Plastic Recycling</option>
                         <option>Rubber Recycling</option>
                         <option>Leather Industry</option>

@@ -34,7 +34,7 @@ export class RegisterSocietyComponent implements OnInit {
       this.societyService.registerSociety(formdata).subscribe(
         (data)=>{
           console.log(data);
-           this.snackBar.open("society registered successfully","success");
+          Swal.fire("success!!","society is successfully added","success");
         },
         (error)=>{
           console.log(error);

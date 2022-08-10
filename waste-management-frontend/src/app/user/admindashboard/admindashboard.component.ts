@@ -25,8 +25,12 @@ export class AdmindashboardComponent implements OnInit {
     console.log("request to logout came");
    this.loginService.logout();
    this.route.navigate(['/login']);
-   
+   this.reloadPage();
    this.snakeBar.open("you have successfully logout!!","ok",{duration:3000});
  }
+
+ reloadPage() {
+  window.location.reload();
+}
 
 }

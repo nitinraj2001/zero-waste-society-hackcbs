@@ -34,7 +34,7 @@ export class NgoRegistrationComponent implements OnInit {
     console.log(formdata);
       this.ngoService.registerNgo(formdata).subscribe((data)=>{
       console.log(data);
-      Swal.fire("Ngo registered successifully","success");
+      Swal.fire("success!!","NGO is successfully added","success");
     })
   }
 

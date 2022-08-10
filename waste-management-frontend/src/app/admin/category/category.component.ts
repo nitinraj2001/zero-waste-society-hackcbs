@@ -33,12 +33,13 @@ export class CategoryComponent implements OnInit {
     this.categoryService.registerWasteCategory(formdata).subscribe(
       (data)=>{
         console.log(data);
-        Swal.fire("waste category is added successfully");
+        Swal.fire("success!!","category is successfully added","success");
         this.route.navigate(['/admin/view-categories']);
         
       },
       (error)=>{
         console.log(error);
+       
       }
     )
 

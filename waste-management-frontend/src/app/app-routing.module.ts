@@ -60,7 +60,8 @@ const routes: Routes = [
     {path:'view-waste',component:ViewWasteComponent},
     {path:'view-ngos',component:ViewNgosComponent},
     {path:'view-industries',component:ViewIndustriesComponent},
-    {path:'view-industry/:id',component:ViewIndustryComponent}
+    {path:'view-industry/:id',component:ViewIndustryComponent},
+    {path:'view-ngos',component:ViewNgosComponent}
   ]}
 ];
 
