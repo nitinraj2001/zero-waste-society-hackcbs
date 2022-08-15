@@ -18,5 +18,7 @@ public interface WasteService {
 
     public WasteMaterial getWasteByUserId(Long id);
 
+    public WasteMaterial getWasteDetails(Long id);
+
 
 }

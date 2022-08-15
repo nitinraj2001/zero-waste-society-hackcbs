@@ -80,6 +80,12 @@ public class CategoryController {
         return ResponseEntity.ok(category);
     }
 
+    @GetMapping("/{categoryName}")
+    public ResponseEntity<Category> getCategoryDetail(@PathVariable String categoryName){
+        Category category=categoryService.getCategoryDetails(categoryName);
+        return ResponseEntity.ok(category);
+    }
+
     // compress the image bytes before storing it in the database
     public static byte[] compressBytes(byte[] data) {
         Deflater deflater = new Deflater();

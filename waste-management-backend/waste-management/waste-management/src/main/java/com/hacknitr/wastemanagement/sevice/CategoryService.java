@@ -14,6 +14,8 @@ public interface CategoryService {
 
     public Category viewCategory(Long id);
 
+    public Category getCategoryDetails(String categoryName);
+
     public Category createCategory(Category category);
 
     public Category updateCategory(Category category);

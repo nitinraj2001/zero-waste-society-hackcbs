@@ -1,9 +1,12 @@
 package com.hacknitr.wastemanagement.controller;
 
 import com.hacknitr.wastemanagement.model.Category;
+import com.hacknitr.wastemanagement.model.User;
 import com.hacknitr.wastemanagement.model.WasteMaterial;
+import com.hacknitr.wastemanagement.repository.UserRepository;
 import com.hacknitr.wastemanagement.response.WasteMaterialResponse;
 import com.hacknitr.wastemanagement.sevice.CategoryService;
+import com.hacknitr.wastemanagement.sevice.UserService;
 import com.hacknitr.wastemanagement.sevice.WasteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +28,13 @@ public class WasteController {
     private WasteService wasteService;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private UserService userService;
 
     @PostMapping(value="/",headers = "content-type=multipart/*")
     public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId,@RequestParam("categoryId") Long categoryId) {
@@ -43,6 +52,10 @@ public class WasteController {
 
         }
         this.wasteService.uploadWaste(wasteMaterial);
+        //once the waste is uploaded successfully update credits to users account
+        User theUser=userService.fetchUser(userId);
+        theUser.setCredit(theUser.getCredit()+5);
+        userRepository.save(theUser);
         return ResponseEntity.ok("waste material is uploaded  succesfully");
     }
 
@@ -57,7 +70,14 @@ public class WasteController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteUploadedWaste(@PathVariable("id") Long wasteId){
+        //collect waste material details of waste id
+        WasteMaterial wasteMaterial=wasteService.getWasteDetails(wasteId);
+        //delete waste credit from user account
+        User theUser=userService.fetchUser(wasteMaterial.getUserId());
+        theUser.setCredit(theUser.getCredit()-5);
+        userRepository.save(theUser);
         this.wasteService.deleteWaste(wasteId);
+
 
 
         return ResponseEntity.ok("uploaded waste is deleted successfully");
@@ -74,6 +94,8 @@ public class WasteController {
         wasteMaterialResponse.setUserId(wasteMaterial.getUserId());
         return ResponseEntity.ok(wasteMaterialResponse);
     }
+
+
 
     @GetMapping("/getAllWastes")
     public ResponseEntity<List<WasteMaterial>> getAllWastes(){
