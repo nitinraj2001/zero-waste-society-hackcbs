@@ -40,6 +40,16 @@ public class User implements UserDetails {
 
 	private String societyName;
 
+	private int credit;
+
+	public int getCredit() {
+		return credit;
+	}
+
+	public void setCredit(int credit) {
+		this.credit = credit;
+	}
+
 	public String getSocietyName() {
 		return societyName;
 	}
@@ -122,7 +132,7 @@ public class User implements UserDetails {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String username, String email, String password, String phonenumber, boolean enabled, String profile, String societyName, Set<UserRole> userRole) {
+	public User(String username, String email, String password, String phonenumber, boolean enabled, String profile, String societyName, int credit, Set<UserRole> userRole) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
@@ -130,6 +140,7 @@ public class User implements UserDetails {
 		this.enabled = enabled;
 		this.profile = profile;
 		this.societyName = societyName;
+		this.credit = credit;
 		this.userRole = userRole;
 	}
 
