@@ -28,6 +28,7 @@ import { ViewIndustriesComponent } from './admin/view-industries/view-industries
 import { ManageWasteComponent } from './common/manage-waste/manage-waste.component';
 import { FactsComponent } from './common/facts/facts.component';
 import { AboutComponent } from './common/about/about.component';
+import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uploaded-waste.component';
 
 
 
@@ -43,7 +44,8 @@ const routes: Routes = [
     {path:'waste',component:AddWasteComponent},
     {path:'society/:id',component:ViewSocietyComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
-    {path:'view-ngo-map',component:ViewNgoMapComponent}
+    {path:'view-ngo-map',component:ViewNgoMapComponent},
+    {path:'view-waste-upload',component:ViewUploadedWasteComponent}
 
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[

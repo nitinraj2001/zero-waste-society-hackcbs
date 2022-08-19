@@ -16,4 +16,8 @@ export class WasteService {
   getAllWastes(){
     return this.http.get(`${baseUrl}/waste/getAllWastes`);
   }
+
+  getAllWastesUploadByUser(id){
+    return this.http.get(`${baseUrl}/waste/getAllWasteMaterial/${id}`);
+  }
 }

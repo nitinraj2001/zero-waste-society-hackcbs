@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-image">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let waste of wastes">
+                <th scope="row">{{waste.id}}</th>
+                <td class="w-25">
+                    <img src="{{waste.picByte}}" class="img-fluid img-thumbnail" alt="Sheep">
+                </td>
+                <td>{{waste.description}}</td>
+                <td>{{waste.name}}</td>
+                <td>Biodegradable waste</td>
+                <button mat-raised-button color="warn" style="margin: right 10%;  margin-top:2%; width:100%">Pick Up Schedule</button>
+            
+              </tr>
+             
+            </tbody>
+          </table>   
+      </div>
+    </div>
+  </div>

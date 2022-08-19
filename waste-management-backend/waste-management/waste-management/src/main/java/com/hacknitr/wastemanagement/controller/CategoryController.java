@@ -80,7 +80,7 @@ public class CategoryController {
         return ResponseEntity.ok(category);
     }
 
-    @GetMapping("/{categoryName}")
+    @GetMapping("/type/{categoryName}")
     public ResponseEntity<Category> getCategoryDetail(@PathVariable String categoryName){
         Category category=categoryService.getCategoryDetails(categoryName);
         return ResponseEntity.ok(category);

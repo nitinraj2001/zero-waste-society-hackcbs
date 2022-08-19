@@ -37,13 +37,14 @@ public class WasteController {
     private UserService userService;
 
     @PostMapping(value="/",headers = "content-type=multipart/*")
-    public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId,@RequestParam("categoryId") Long categoryId) {
+    public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId,@RequestParam("categoryName") String categoryName) {
+        //fetch category by name
+        Category category=categoryService.getCategoryDetails(categoryName);
         WasteMaterial wasteMaterial = new WasteMaterial();
-        System.out.println(name+" "+categoryId);
+        System.out.println(name+" "+category.getId());
         wasteMaterial.setName(name);
         wasteMaterial.setDescription(description);
         wasteMaterial.setUserId(userId);
-        Category category=this.categoryService.viewCategory(categoryId);
         wasteMaterial.setCategory(category);
         try {
             wasteMaterial.setPicByte(compressBytes(file.getBytes()));

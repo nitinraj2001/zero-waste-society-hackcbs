@@ -18,7 +18,7 @@ export class AddWasteComponent implements OnInit {
 
   categoryName:any;
 
-  categoryId:any;
+  categoryId:any=1;
 
   retrievedImage: string;
 
@@ -28,6 +28,8 @@ export class AddWasteComponent implements OnInit {
   picByte: any;
   user:any;
   userId:any;
+  thecategoryName:any;
+  thecategory:any;
 
  
 
@@ -38,7 +40,8 @@ export class AddWasteComponent implements OnInit {
     this.user=localStorage.getItem("user");
     this.user=JSON.parse(this.user);
     console.log(JSON.parse(this.user));
-    this.userId=this.user.userId;
+    this.userId=3;
+    console.log(this.userId);
   }
 
   onFileChanged(event) {
@@ -46,16 +49,16 @@ export class AddWasteComponent implements OnInit {
   }
 
   registerWaste(){
-    this.categoryId=1;
+    this.fetchCategoryDetails();
     console.log(this.categories);
     const formdata=new FormData();
     console.log(this.waste);
     formdata.append("name",this.waste.name);
     formdata.append("description",this.waste.description);
     formdata.append("wasteImage",this.picByte);
-    formdata.append("userId",this.userId);
+    formdata.append("userId",this.user.userId);
     console.log("userid would be",this.user.userId);
-    formdata.append("categoryId",this.categoryId);
+    formdata.append("categoryName",this.thecategoryName);
     console.log(formdata);
     this.wasteService.registerYourWaste(formdata).subscribe((data)=>{
       console.log(data);
@@ -63,6 +66,13 @@ export class AddWasteComponent implements OnInit {
 
     })
 
+  }
+  fetchCategoryDetails(){
+    this.categoryService.getCategoryDetails(this.thecategoryName).subscribe((data)=>{
+      this.thecategory=data;
+      console.log(data);
+      this.categoryId=this.thecategory.id;
+    })
   }
 
    fetchAllCategories(){

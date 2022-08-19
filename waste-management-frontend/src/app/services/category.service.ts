@@ -28,4 +28,7 @@ export class CategoryService {
   getCategory(id){
     return this.http.get(`${baseUrl}/category/${id}`);
   }
+  getCategoryDetails(categoryName){
+    return this.http.get(`${baseUrl}/category/type/${categoryName}`);
+  }
 }

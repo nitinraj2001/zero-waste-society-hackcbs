@@ -42,6 +42,7 @@ import { ViewAllIndustriesComponent } from './admin/view-all-industries/view-all
 import { ManageWasteComponent } from './common/manage-waste/manage-waste.component';
 import { FactsComponent } from './common/facts/facts.component';
 import { AboutComponent } from './common/about/about.component';
+import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uploaded-waste.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { AboutComponent } from './common/about/about.component';
     ViewAllIndustriesComponent,
     ManageWasteComponent,
     FactsComponent,
-    AboutComponent
+    AboutComponent,
+    ViewUploadedWasteComponent
   ],
   imports: [
     BrowserModule,

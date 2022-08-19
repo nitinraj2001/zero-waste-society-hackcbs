@@ -11,12 +11,7 @@
                     <form (ngSubmit)="registerWaste()">
                         <p> <input type="text" placeholder="Enter waste material name" class="form-control" id="wasteMaterialName"  name="wasteMaterialName" [(ngModel)]="waste.name">   </p>
                         <p ><input type="text" placeholder="Enter  description" class="form-control" id="wasteMaterialDescription" name="description" [(ngModel)]="waste.description"></p>
-                        <input type="text" name="typeofNGO" list="typeofNGO" placeholder="Select Waste category Type" [(ngModel)]="categoryName">
-                <datalist id="typeofNGO">
-                    <option>Recycle</option>
-                    <option>Reusable</option>
-                    <option>Neither Recycle nor reusable</option>
-                </datalist>
+                        <p ><input type="text" placeholder="Enter  category name" class="form-control" id="wasteMaterialCategory" name="thecategoryName" [(ngModel)]="thecategoryName"></p>
                         <p style="color:green;"><input type="file" (change)="onFileChanged($event)"><i><b>Upload Image of Waste Material</b></i></p>
                         <button type="submit">Submit</button>
                     </form>
