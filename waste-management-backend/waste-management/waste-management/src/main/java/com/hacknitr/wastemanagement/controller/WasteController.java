@@ -54,11 +54,15 @@ public class WasteController {
         }
         this.wasteService.uploadWaste(wasteMaterial);
         //once the waste is uploaded successfully update credits to users account
+
         User theUser=userService.fetchUser(userId);
         theUser.setCredit(theUser.getCredit()+5);
         userRepository.save(theUser);
         return ResponseEntity.ok("waste material is uploaded  succesfully");
     }
+
+    @PostMapping("/schedule-pickUp")
+
 
     @GetMapping("/getAllWasteMaterial/{id}")
     public ResponseEntity<?> getAllWasteMaterialDetails(@PathVariable("id") Long userId){
@@ -78,8 +82,6 @@ public class WasteController {
         theUser.setCredit(theUser.getCredit()-5);
         userRepository.save(theUser);
         this.wasteService.deleteWaste(wasteId);
-
-
 
         return ResponseEntity.ok("uploaded waste is deleted successfully");
     }

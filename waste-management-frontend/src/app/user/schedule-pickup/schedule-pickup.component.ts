@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulePickupComponent implements OnInit {
 
+  pickUpSchedule:any={"wasteDetails":"","userId":"","date":"","time":""}
+
   constructor() { }
 
   ngOnInit(): void {
