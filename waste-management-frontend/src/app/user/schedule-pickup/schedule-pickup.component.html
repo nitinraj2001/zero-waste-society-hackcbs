@@ -1,0 +1,34 @@
+<script src="https://use.fontawesome.com/f59bcd8580.js"></script>
+<div class="container">
+  <div class="row m-5 no-gutters shadow-lg">
+  <div class="col-md-6 d-none d-md-block">
+  <img src="../../../assets/recycle_pic.jpg" class="img-fluid" style="max-height:600%;" />
+ </div>
+<div class="col-md-6 bg-white p-5" style="margin-top: -7%;">
+<h3 class="pb-3">Waste Pick Up Form</h3>
+<div class="form-style">
+<form (ngSubmit)="scheduleYourPickUp()">
+  <div class="form-group pb-3">    
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Enter waste details" name="waste" [(ngModel)]="pickUpSchedule.wasteDetails">   
+  </div>
+  <div class="form-group pb-3">    
+    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  placeholder="Enter Location" name="location" [(ngModel)]="pickUpSchedule.location">   
+  </div>
+  <div class="form-group pb-3">    
+    Select Pick Up Date &nbsp; <input type="date" id="birthday" name="birthday" [(ngModel)]="pickUpSchedule.date"> 
+  </div>
+  
+  <div class="form-group pb-3">    
+    Select Pick Up Time &nbsp; <input type="time" id="appt" name="appt" [(ngModel)]="pickUpSchedule.time">
+  </div>
+  
+   <div class="pb-2">
+     <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2">Submit</button>
+   </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+  

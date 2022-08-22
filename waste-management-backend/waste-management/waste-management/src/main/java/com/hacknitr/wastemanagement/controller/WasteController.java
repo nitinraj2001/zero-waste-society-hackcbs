@@ -1,11 +1,13 @@
 package com.hacknitr.wastemanagement.controller;
 
 import com.hacknitr.wastemanagement.model.Category;
+import com.hacknitr.wastemanagement.model.SchedulePickup;
 import com.hacknitr.wastemanagement.model.User;
 import com.hacknitr.wastemanagement.model.WasteMaterial;
 import com.hacknitr.wastemanagement.repository.UserRepository;
 import com.hacknitr.wastemanagement.response.WasteMaterialResponse;
 import com.hacknitr.wastemanagement.sevice.CategoryService;
+import com.hacknitr.wastemanagement.sevice.SchedulePickupService;
 import com.hacknitr.wastemanagement.sevice.UserService;
 import com.hacknitr.wastemanagement.sevice.WasteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,9 @@ public class WasteController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private SchedulePickupService schedulePickupService;
+
     @PostMapping(value="/",headers = "content-type=multipart/*")
     public ResponseEntity registerWaste(@RequestParam("wasteImage") MultipartFile file, @RequestParam("name") String name, @RequestParam("description") String description,@RequestParam("userId") Long userId,@RequestParam("categoryName") String categoryName) {
         //fetch category by name
@@ -62,6 +67,16 @@ public class WasteController {
     }
 
     @PostMapping("/schedule-pickUp")
+    public ResponseEntity scheduleWaste(@RequestBody SchedulePickup schedulePickup){
+        SchedulePickup schedulePickup1=schedulePickupService.schedulePickUp(schedulePickup);
+        return ResponseEntity.ok("waste pick up is schedule successfully check your mail for further details");
+    }
+
+    @GetMapping("/schedule/{id}")
+    public ResponseEntity<SchedulePickup> getScheduleDetails(@PathVariable Long userId){
+        SchedulePickup schedulePickup=this.schedulePickupService.getScheduleDetail(userId);
+        return ResponseEntity.ok(schedulePickup);
+    }
 
 
     @GetMapping("/getAllWasteMaterial/{id}")

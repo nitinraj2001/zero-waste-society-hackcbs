@@ -18,6 +18,16 @@ public class SchedulePickup {
 
     private String date;
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    private String location;
+
     private String time;
 
     public String getDate() {
@@ -60,10 +70,11 @@ public class SchedulePickup {
         this.userId = userId;
     }
 
-    public SchedulePickup(String wasteDetails, Long userId, String date, String time) {
+    public SchedulePickup(String wasteDetails, Long userId, String date, String time,String location) {
         this.wasteDetails = wasteDetails;
         this.userId = userId;
         this.date = date;
         this.time = time;
+        this.location=location;
     }
 }

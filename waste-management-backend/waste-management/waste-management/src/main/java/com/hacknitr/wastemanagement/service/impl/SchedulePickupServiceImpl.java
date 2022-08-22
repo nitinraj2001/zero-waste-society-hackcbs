@@ -41,4 +41,9 @@ public class SchedulePickupServiceImpl implements SchedulePickupService {
         }
         return this.schedulePickupRepository.save(schedulePickup);
     }
+
+    @Override
+    public SchedulePickup getScheduleDetail(Long userId) {
+        return this.schedulePickupRepository.findSchedulePickupByUserId(userId);
+    }
 }

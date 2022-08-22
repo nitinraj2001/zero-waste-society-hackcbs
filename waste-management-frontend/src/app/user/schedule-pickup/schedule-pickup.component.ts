@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PickUpScheduleService} from '../../service/pick-up-schedule.service';
 
 @Component({
   selector: 'app-schedule-pickup',
@@ -7,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulePickupComponent implements OnInit {
 
-  pickUpSchedule:any={"wasteDetails":"","userId":"","date":"","time":""}
+  pickUpSchedule:any={"wasteDetails":"","userId":"","date":"","time":"","location":""}
 
-  constructor() { }
+  constructor(private schedulePickUpService:PickUpScheduleService) { }
 
   ngOnInit(): void {
+  }
+
+  scheduleYourPickUp(){
+     console.log(this.pickUpSchedule);
+     this.schedulePickUpService.scheduleYourWastePickUp(this.pickUpSchedule).subscribe((data)=>{
+      console.log(data);
+     }),
+     (error)=>{
+      console.log(error);
+     }
   }
 
 }

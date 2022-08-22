@@ -7,4 +7,6 @@ import org.springframework.stereotype.Service;
 public interface SchedulePickupService {
 
     public SchedulePickup schedulePickUp(SchedulePickup schedulePickup);
+
+    public SchedulePickup getScheduleDetail(Long userId);
 }

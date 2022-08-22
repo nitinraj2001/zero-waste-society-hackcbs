@@ -45,8 +45,8 @@ const routes: Routes = [
     {path:'society/:id',component:ViewSocietyComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
     {path:'view-ngo-map',component:ViewNgoMapComponent},
-    {path:'view-waste-upload',component:ViewUploadedWasteComponent}
-
+    {path:'view-waste-upload',component:ViewUploadedWasteComponent},
+    {path:'schedule-pickup',component:SchedulePickupComponent},
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
     {path:'',component:WelcomeAdminComponent},
