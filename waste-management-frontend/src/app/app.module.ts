@@ -43,6 +43,7 @@ import { ManageWasteComponent } from './common/manage-waste/manage-waste.compone
 import { FactsComponent } from './common/facts/facts.component';
 import { AboutComponent } from './common/about/about.component';
 import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uploaded-waste.component';
+import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-society-by-user.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uplo
     ManageWasteComponent,
     FactsComponent,
     AboutComponent,
-    ViewUploadedWasteComponent
+    ViewUploadedWasteComponent,
+    ViewSocietyByUserComponent
   ],
   imports: [
     BrowserModule,

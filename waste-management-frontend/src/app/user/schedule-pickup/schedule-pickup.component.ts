@@ -8,11 +8,16 @@ import {PickUpScheduleService} from '../../service/pick-up-schedule.service';
 })
 export class SchedulePickupComponent implements OnInit {
 
+  user:any;
+
   pickUpSchedule:any={"wasteDetails":"","userId":"","date":"","time":"","location":""}
 
   constructor(private schedulePickUpService:PickUpScheduleService) { }
 
   ngOnInit(): void {
+    this.user=localStorage.getItem("user");
+    this.user=JSON.parse(this.user);
+    this.pickUpSchedule.userId=this.user.userId;
   }
 
   scheduleYourPickUp(){

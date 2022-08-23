@@ -28,6 +28,7 @@ export class ViewIndustryComponent implements OnInit {
       console.log(error);
     }
   }
+  
 
 
 

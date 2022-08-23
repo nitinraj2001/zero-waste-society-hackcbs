@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {SocietyService} from '../../service/society.service'
 
 @Component({
@@ -16,7 +17,7 @@ export class ViewSocietiesComponent implements OnInit {
 
   society:any={"id":"","name":"","email":"","address":""};
 
-  constructor(private societyService:SocietyService) { }
+  constructor(private societyService:SocietyService,private route:Router) { }
 
   ngOnInit(): void {
     this.getAllSociety();
@@ -38,6 +39,12 @@ export class ViewSocietiesComponent implements OnInit {
      }
 
     )}
+
+    viewSociety(id:any){
+       this.route.navigate['/user/view-society/${id}'];
+    }
+
+    
       
   
   

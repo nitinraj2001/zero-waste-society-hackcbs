@@ -16,7 +16,7 @@
             <td>{{society.name}}</td>
             <td>{{society.email}}</td>
             <td>{{society.address}}</td>
-            <td><button mat-raised-button  color="accent">view</button> </td>
+            <td><button (onclick)="viewSociety(society.id)" mat-raised-button  color="accent">view</button> </td>
           </tr>
           
         </tbody>
