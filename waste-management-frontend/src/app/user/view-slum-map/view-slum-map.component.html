@@ -1,3 +1,25 @@
-<div #map style="width:100%;height:450px">
-
+<h4 style="margin-top: 5%; margin-left:5%; color:red">List of registered slum areas  </h4>
+<div class="container">  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="text-align: left;">Email</th>
+            <th style="text-align: left;">Location</th>
+            <th style="text-align: left;">Contact</th>
+            <th style="text-align: left;">Description</th>
+            <th style="text-align: left;">View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let slum of slumAreas">
+           
+            <td>{{slum.email}}</td>
+            <td>{{slum.location}}</td>
+            <td>{{slum.contact}}</td>
+            <td>{{slum.description}}</td>
+            <td><button mat-raised-button  color="accent">view</button> </td>
+          </tr>
+          
+        </tbody>
+      </table> 
 </div>

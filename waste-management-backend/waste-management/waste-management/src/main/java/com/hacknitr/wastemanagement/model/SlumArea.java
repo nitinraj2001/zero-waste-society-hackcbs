@@ -66,4 +66,8 @@ public class SlumArea {
         this.description = description;
         this.contact = contact;
     }
+
+
+    public SlumArea() {
+    }
 }

@@ -33,10 +33,10 @@ public class SlumAreaController {
         return ResponseEntity.ok(slumArea);
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteRegisteredSlumArea(@PathVariable Long id){
         this.slumAreaService.deleteSlumArea(id);
         return ResponseEntity.ok("slum area is successfully deleted");
     }
+
 }

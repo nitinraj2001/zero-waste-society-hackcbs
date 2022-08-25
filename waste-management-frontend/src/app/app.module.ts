@@ -46,6 +46,7 @@ import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uplo
 import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-society-by-user.component';
 import { ViewSlumMapComponent } from './user/view-slum-map/view-slum-map.component';
 import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pickup-schedule.component';
+import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-slum-area.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pi
     ViewUploadedWasteComponent,
     ViewSocietyByUserComponent,
     ViewSlumMapComponent,
-    ViewPickupScheduleComponent
+    ViewPickupScheduleComponent,
+    RegisterSlumAreaComponent
   ],
   imports: [
     BrowserModule,

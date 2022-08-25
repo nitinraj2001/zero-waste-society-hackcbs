@@ -1,0 +1,32 @@
+<script src="https://use.fontawesome.com/f59bcd8580.js"></script>
+<div class="container">
+  <div class="row m-5 no-gutters shadow-lg">
+  <div class="col-md-6 d-none d-md-block">
+  <img src="../../../assets/recycle_pic.jpg" class="img-fluid" style="max-height:600%;" />
+ </div>
+<div class="col-md-6 bg-white p-5" style="margin-top: -9%;">
+<div class="form-style">
+<form (ngSubmit)="registerSlumArea()">
+  <div class="form-group pb-3">    
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Enter location address" name="location" [(ngModel)]="slumArea.location">   
+  </div>
+  <div class="form-group pb-3">    
+    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  placeholder="Enter email" name="email" [(ngModel)]="slumArea.email">
+  </div>
+  <div class="form-group pb-3">    
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Enter contact number" name="contact" [(ngModel)]="slumArea.contact">   
+  </div>
+  <div class="form-group pb-3">    
+    <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp"  placeholder="Enter description " name="description" [(ngModel)]="slumArea.description">   
+  </div>
+
+   <div class="pb-2">
+     <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2">Register Slum Area</button>
+   </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+  
