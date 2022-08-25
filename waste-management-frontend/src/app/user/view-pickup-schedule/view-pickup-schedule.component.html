@@ -1,0 +1,27 @@
+<h4 style="margin-top: 5%; margin-left:5%; color:red">List of Coming Schedules</h4>
+<div class="container">  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+           <th style="text-align: left;">S.No</th>
+            <th style="text-align: left;">Waste Details</th>
+            <th style="text-align: left;">location</th>
+            <th style="text-align: left;">date</th>
+            <th style="text-align: left;">time</th>
+            <th style="text-align:left;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sch of schedules">
+            <td>{{sch.id}}</td>
+            <td>{{sch.wasteDetails}}</td>
+            <td>{{sch.location}}</td>
+            <td>{{sch.date}}</td>
+            <td>{{sch.time}}</td>
+            <td><button mat-raised-button  color="accent">Delete Schedule</button> </td>
+          </tr>
+          
+        </tbody>
+      </table> 
+    
+</div>

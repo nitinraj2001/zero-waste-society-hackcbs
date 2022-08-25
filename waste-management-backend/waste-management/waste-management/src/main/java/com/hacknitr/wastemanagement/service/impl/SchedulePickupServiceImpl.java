@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SchedulePickupServiceImpl implements SchedulePickupService {
 
@@ -43,7 +45,7 @@ public class SchedulePickupServiceImpl implements SchedulePickupService {
     }
 
     @Override
-    public SchedulePickup getScheduleDetail(Long userId) {
-        return this.schedulePickupRepository.findSchedulePickupByUserId(userId);
+    public List<SchedulePickup> getScheduleDetail(Long userId) {
+        return this.schedulePickupRepository.findByUserId(userId);
     }
 }

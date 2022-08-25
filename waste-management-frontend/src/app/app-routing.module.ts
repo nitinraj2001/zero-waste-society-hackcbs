@@ -30,6 +30,8 @@ import { FactsComponent } from './common/facts/facts.component';
 import { AboutComponent } from './common/about/about.component';
 import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uploaded-waste.component';
 import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-society-by-user.component';
+import { ViewSlumMapComponent } from './user/view-slum-map/view-slum-map.component';
+import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pickup-schedule.component';
 
 
 
@@ -48,7 +50,9 @@ const routes: Routes = [
     {path:'view-ngo-map',component:ViewNgoMapComponent},
     {path:'view-waste-upload',component:ViewUploadedWasteComponent},
     {path:'schedule-pickup',component:SchedulePickupComponent},
-    {path:'view-society/:id',component:ViewSocietyByUserComponent}
+    {path:'view-society/:id',component:ViewSocietyByUserComponent},
+    {path:'view-slum-area',component:ViewSlumMapComponent},
+    {path:'view-pickup-schedule',component:ViewPickupScheduleComponent}
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
     {path:'',component:WelcomeAdminComponent},

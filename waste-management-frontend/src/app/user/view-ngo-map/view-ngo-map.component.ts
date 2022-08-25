@@ -18,6 +18,7 @@ export class ViewNgoMapComponent implements AfterViewInit {
   title: boolean;
 
 
+
   constructor() { }
 
   ngOnInit(): void {

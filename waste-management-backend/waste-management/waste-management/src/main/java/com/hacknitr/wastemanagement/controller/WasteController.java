@@ -73,8 +73,8 @@ public class WasteController {
     }
 
     @GetMapping("/schedule/{id}")
-    public ResponseEntity<SchedulePickup> getScheduleDetails(@PathVariable Long userId){
-        SchedulePickup schedulePickup=this.schedulePickupService.getScheduleDetail(userId);
+    public ResponseEntity<List<SchedulePickup>> getScheduleDetails(@PathVariable("id") Long userId){
+       List<SchedulePickup> schedulePickup=this.schedulePickupService.getScheduleDetail(userId);
         return ResponseEntity.ok(schedulePickup);
     }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SocietyService } from 'src/app/service/society.service';
 
 @Component({
@@ -8,10 +9,28 @@ import { SocietyService } from 'src/app/service/society.service';
 })
 export class ViewSocietyByUserComponent implements OnInit {
 
-  constructor(private societyService:SocietyService) { }
+  societyId:any;
+  base64Data: any;
+  retrievedImage: string;
+
+  thesociety:any;
+  society={"name":"","email":"","address":""};
+
+  constructor(private societyService:SocietyService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+   this.societyId=+this.route.snapshot.paramMap.get('id');
+   this.getSocietyInfo();
+  }
+
+  getSocietyInfo(){
+     this.societyService.getSocietyDetails(this.societyId).subscribe((data)=>{
+        console.log(data);
+        this.thesociety=data;
+        this.base64Data=this.thesociety.picByte;
+        this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+        this.thesociety.picByte=this.retrievedImage;
+     })
   }
 
 }

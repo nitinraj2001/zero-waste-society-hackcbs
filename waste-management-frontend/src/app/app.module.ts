@@ -44,6 +44,8 @@ import { FactsComponent } from './common/facts/facts.component';
 import { AboutComponent } from './common/about/about.component';
 import { ViewUploadedWasteComponent } from './user/view-uploaded-waste/view-uploaded-waste.component';
 import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-society-by-user.component';
+import { ViewSlumMapComponent } from './user/view-slum-map/view-slum-map.component';
+import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pickup-schedule.component';
 
 
 @NgModule({
@@ -80,7 +82,9 @@ import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-soc
     FactsComponent,
     AboutComponent,
     ViewUploadedWasteComponent,
-    ViewSocietyByUserComponent
+    ViewSocietyByUserComponent,
+    ViewSlumMapComponent,
+    ViewPickupScheduleComponent
   ],
   imports: [
     BrowserModule,

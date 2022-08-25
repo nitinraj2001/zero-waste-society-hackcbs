@@ -77,4 +77,7 @@ public class SchedulePickup {
         this.time = time;
         this.location=location;
     }
+
+    public SchedulePickup() {
+    }
 }
