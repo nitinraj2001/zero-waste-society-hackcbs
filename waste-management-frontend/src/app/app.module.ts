@@ -47,6 +47,8 @@ import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-soc
 import { ViewSlumMapComponent } from './user/view-slum-map/view-slum-map.component';
 import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pickup-schedule.component';
 import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-slum-area.component';
+import { UserViewIndustryComponent } from './user/user-view-industry/user-view-industry.component';
+import { RegisterMuncipalityComponent } from './admin/register-muncipality/register-muncipality.component';
 
 
 @NgModule({
@@ -86,7 +88,9 @@ import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-s
     ViewSocietyByUserComponent,
     ViewSlumMapComponent,
     ViewPickupScheduleComponent,
-    RegisterSlumAreaComponent
+    RegisterSlumAreaComponent,
+    UserViewIndustryComponent,
+    RegisterMuncipalityComponent
   ],
   imports: [
     BrowserModule,

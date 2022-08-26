@@ -37,7 +37,6 @@ public class IndustryController {
     public ResponseEntity deleteIndustry(@PathVariable("id") Long id){
         this.industryService.deleteIndustry(id);
         return ResponseEntity.ok("industry deleted successfully");
-
     }
 
 

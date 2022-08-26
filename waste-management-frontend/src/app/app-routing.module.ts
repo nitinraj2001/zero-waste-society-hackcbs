@@ -33,6 +33,7 @@ import { ViewSocietyByUserComponent } from './user/view-society-by-user/view-soc
 import { ViewSlumMapComponent } from './user/view-slum-map/view-slum-map.component';
 import { ViewPickupScheduleComponent } from './user/view-pickup-schedule/view-pickup-schedule.component';
 import { RegisterSlumAreaComponent } from './admin/register-slum-area/register-slum-area.component';
+import { UserViewIndustryComponent } from './user/user-view-industry/user-view-industry.component';
 
 
 
@@ -53,7 +54,8 @@ const routes: Routes = [
     {path:'schedule-pickup',component:SchedulePickupComponent},
     {path:'view-society/:id',component:ViewSocietyByUserComponent},
     {path:'view-slum-area',component:ViewSlumMapComponent},
-    {path:'view-pickup-schedule',component:ViewPickupScheduleComponent}
+    {path:'view-pickup-schedule',component:ViewPickupScheduleComponent},
+    {path:'user-view-industry',component:UserViewIndustryComponent}
   ]},
   {path:'admin',component:AdmindashboardComponent, canActivate:[AdminGuard],children:[
     {path:'',component:WelcomeAdminComponent},

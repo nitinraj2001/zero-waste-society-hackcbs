@@ -15,8 +15,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
@@ -64,6 +67,53 @@ public class WasteController {
         theUser.setCredit(theUser.getCredit()+5);
         userRepository.save(theUser);
         return ResponseEntity.ok("waste material is uploaded  succesfully");
+    }
+
+    @PostMapping(value="/predict-waste",headers = "content-type=multipart/*")
+    public ResponseEntity<String> predictWaste(@RequestParam("wasteImage") MultipartFile file){
+        String imageURL = "https://i.imgur.com/PEEvqPN.png"; // Replace Image URL
+        String API_KEY = "kvgQYhFnmZM1aB34bXb0"; // Your API Key
+        String MODEL_ENDPOINT = "dataset/v"; // model endpoint
+
+        // Upload URL
+        String uploadURL = "https://detect.roboflow.com/" + MODEL_ENDPOINT + "?api_key=" + API_KEY + "&image="
+                + URLEncoder.encode(imageURL, StandardCharsets.UTF_8);
+
+        // Http Request
+        HttpURLConnection connection = null;
+        String line = null;
+        try {
+            // Configure connection to URL
+            URL url = new URL(uploadURL);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            connection.setRequestProperty("Content-Length", Integer.toString(uploadURL.getBytes().length));
+            connection.setRequestProperty("Content-Language", "en-US");
+            connection.setUseCaches(false);
+            connection.setDoOutput(true);
+
+            // Send request
+            DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
+            wr.writeBytes(uploadURL);
+            wr.close();
+
+            // Get Response
+            InputStream stream = new URL(uploadURL).openStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
+        return ResponseEntity.ok(line);
     }
 
     @PostMapping("/schedule-pickUp")
