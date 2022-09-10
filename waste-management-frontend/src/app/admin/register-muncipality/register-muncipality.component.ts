@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterMuncipalityComponent implements OnInit {
 
+  muncipality:any={"location":"","email":"","contact":""};
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  registerMuncipality(){
+    
   }
 
 }
