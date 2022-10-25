@@ -11,4 +11,6 @@ public interface SchedulePickupService {
     public SchedulePickup schedulePickUp(SchedulePickup schedulePickup);
 
     public List<SchedulePickup> getScheduleDetail(Long userId);
+
+    public void deleteSchedule(Long id);
 }

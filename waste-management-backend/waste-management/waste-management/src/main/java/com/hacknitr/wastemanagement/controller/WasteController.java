@@ -26,6 +26,7 @@ import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/waste")
 public class WasteController {
 
@@ -126,6 +127,14 @@ public class WasteController {
     public ResponseEntity<List<SchedulePickup>> getScheduleDetails(@PathVariable("id") Long userId){
        List<SchedulePickup> schedulePickup=this.schedulePickupService.getScheduleDetail(userId);
         return ResponseEntity.ok(schedulePickup);
+    }
+
+    @DeleteMapping("/schedule/{id}")
+    public ResponseEntity deleteSchedulePickUp(@PathVariable("id") Long id){
+
+        this.schedulePickupService.deleteSchedule(id);
+
+        return ResponseEntity.ok("schedule is deleted successfully");
     }
 
 

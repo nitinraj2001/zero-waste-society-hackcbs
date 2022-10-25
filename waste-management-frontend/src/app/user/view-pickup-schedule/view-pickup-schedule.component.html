@@ -18,7 +18,7 @@
             <td>{{sch.location}}</td>
             <td>{{sch.date}}</td>
             <td>{{sch.time}}</td>
-            <td><button mat-raised-button  color="accent">Delete Schedule</button> </td>
+            <td><button mat-raised-button  color="accent" (click)="deleteSchedule(sch.id)">Delete Schedule</button> </td>
           </tr>
           
         </tbody>

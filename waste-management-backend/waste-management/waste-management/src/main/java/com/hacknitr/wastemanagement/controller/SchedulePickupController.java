@@ -5,9 +5,7 @@ import com.hacknitr.wastemanagement.model.SchedulePickup;
 import com.hacknitr.wastemanagement.sevice.SchedulePickupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SchedulePickupController {
@@ -22,5 +20,13 @@ public class SchedulePickupController {
 
 
         return ResponseEntity.ok("waste pick up is schedule successfully check your mail for further details");
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteSchedulePickUp(@PathVariable Long id){
+
+        this.schedulePickupService.deleteSchedule(id);
+
+        return ResponseEntity.ok("schedule is deleted successfully");
     }
 }

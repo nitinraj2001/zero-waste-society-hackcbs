@@ -9,13 +9,9 @@
         
                 </td>
                 <td width="40%"  style="padding: 20px" >
-                    <h1>Add Waste Material</h1>
+                    <h3 style="margin-left:10%"><b>Add Waste Material</b></h3>
                     <form (ngSubmit)="registerWaste()">
-                        <p> <input type="text" placeholder="Enter waste material name" class="form-control" id="wasteMaterialName"  name="wasteMaterialName" [(ngModel)]="waste.name">   </p><select><option>
-                            Wood
-                        </option>
-                    <option>Electronic material</option></select>
-                        <p ><input type="text" placeholder="Enter  description" class="form-control" id="wasteMaterialDescription" name="description" [(ngModel)]="waste.description"></p>
+                        <p> <input type="text" placeholder="Enter waste material name" class="form-control" id="wasteMaterialName"  name="wasteMaterialName" [(ngModel)]="waste.name">   </p>                        <p ><input type="text" placeholder="Enter  description" class="form-control" id="wasteMaterialDescription" name="description" [(ngModel)]="waste.description"></p>
                         <p ><input type="text" placeholder="Enter  category name" class="form-control" id="wasteMaterialCategory" name="thecategoryName" [(ngModel)]="thecategoryName"></p>
                         <p style="color:green;"><input type="file" (change)="onFileChanged($event)"><i><b>Upload Image of Waste Material</b></i></p>
                         <button type="submit">Submit</button>
