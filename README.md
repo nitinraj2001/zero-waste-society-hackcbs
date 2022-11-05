@@ -1,2 +1,2 @@
-# my-swachta-app
-An app for zero waste society, disposal, reuse, recycle 
+# Zero Waste Society using CNN(Convulational Neural Network)
+
