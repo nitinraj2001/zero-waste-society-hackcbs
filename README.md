@@ -49,3 +49,7 @@ Future work:- We are going to make etherum smart contract for waste tracking.
 2. Pulkit Saini(9690959716, pulkitsainisre@gmail.com)
 3. Prashant Srivastava(8299195971,prashant2019cs071@abesit.edu.in)
 
+## Team Name
+
+Hack@abes
+
