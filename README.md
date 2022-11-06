@@ -26,9 +26,17 @@ Spring Framework, Spring Boot, Angular10, Machine learning, Convulational Neural
 ## How to run this app
 
 Step 1 Clone the repository.
+
 Step 2 open waste-management-frontend in vscode and do npm install.
+
 Step 3 Now run ng serve --open.
+
 Step 4 Open waste-management-backend in intelij or eclipse
+
 Step 5 Do maven update to download dependencies.
+
 Step 5(b) Update applications.properties as per your mysql configuration and also create waste-management schema in db.
+
 Step 6 Run the backend application.
+
+Future work:- We are going to make etherum smart contract for waste tracking.
