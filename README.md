@@ -16,3 +16,4 @@ If the waste material is disposal then user can schedule pick up for waste dispo
 In this way waste is disposed, recycle and reused.
 
 
+PPT Link:- https://docs.google.com/presentation/d/1tp3OSXKvj-ZSVEzyL6fj2xieKlYokBMP/edit?usp=share_link&ouid=113525203676316464353&rtpof=true&sd=true
