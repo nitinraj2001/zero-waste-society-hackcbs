@@ -4,6 +4,8 @@
 
 Problem Statement:- Segregation of waste,reuse, recycle and disposal.
 
+Solution:-
+
 ## In this app when user upload waste material, CNN model classify it either recyclable or disposal.
 If the waste material is recyclable then that material is provided to tired industries for recycling.
 
@@ -40,3 +42,10 @@ Step 5(b) Update applications.properties as per your mysql configuration and als
 Step 6 Run the backend application.
 
 Future work:- We are going to make etherum smart contract for waste tracking.
+
+## Team Members Details
+
+1. Nitin Raj(9560293905,nitinraj2001@gmail.com)
+2. Pulkit Saini(9690959716, pulkitsainisre@gmail.com)
+3. Prashant Srivastava(8299195971,prashant2019cs071@abesit.edu.in)
+
